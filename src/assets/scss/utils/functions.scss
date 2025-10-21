@@ -1,0 +1,71 @@
+@use "sass:math";
+
+/*
+size(40, 28, 1920, 360, px)
+Адаптивный размер:
+- $max - максимальный размер
+- $min - минимальный размер
+- $max-width - ширина экрана максимального размера
+- $min-width - ширина экрана минимального размера
+- $unit - единицы измерения (rem, px и т. д.)
+*/
+@function size($max: 32, $min: 20, $max-width: 1920, $min-width: 360, $unit: rem) {
+
+	// Если не переданы min/max ширины, задаем значения по умолчанию
+	@if not $max-width {
+		$max-width: 1920;
+	}
+
+	@if not $min-width {
+		$min-width: 360;
+	}
+
+	// Преобразование размеров в нужную единицу
+	$maxSize: if($unit ==rem, math.div($max, 16), $max);
+	$minSize: if($unit ==rem, math.div($min, 16), $min);
+
+	// Преобразование ширины экрана в rem (если нужно)
+	$maxWidth: if($unit ==rem, math.div($max-width, 16), $max-width);
+	$minWidth: if($unit ==rem, math.div($min-width, 16), $min-width);
+
+	// Вычисление наклона и точки пересечения
+	$slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+	$yAxisIntersection: -$minWidth * $slope + $minSize;
+
+	// Определение порядка значений в clamp()
+	$start: min($minSize, $maxSize);
+	$end: max($minSize, $maxSize);
+
+	// Применение стилей
+	@return clamp(#{$start}#{$unit},
+		#{$yAxisIntersection}#{$unit} + #{$slope * 100vw},
+		#{$end}#{$unit});
+}
+
+/* преоброзвания в rem*/
+@function rem($pixel) {
+	@if math.is-unitless($pixel) {
+		@return math.div($pixel, 16)+rem;
+	}
+
+	@else {
+		@error 'Don\'t use units when using the rem() function; only numbers.'
+
+	}
+}
+
+@function max-size($size) {
+    @return max($size * 1rem, $size * 1px);
+}
+
+@function size1920($max: 32, $min: 20) {
+    @return size($max, $min, 1919.99, 1280);
+}
+
+@function size1240($max: 32, $min: 20) {
+    @return size($max, $min, 1260, 767);
+}
+
+@function size760($max: 32, $min: 20) {
+    @return size($max, $min, 760, 360);
+}

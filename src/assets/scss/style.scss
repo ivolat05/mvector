@@ -1,0 +1,25 @@
+// Сброс стилей браузера (reset)
+@import "../scss/vendor/reset.scss";
+
+// Подключение сторонних библиотек
+@import "../scss/vendor/swiper-bundle.min.scss";
+@import "../scss/vendor/tippy.scss";
+
+// Функции и миксины
+@import "../scss/utils/functions.scss";
+@import "../scss/utils/mixin.scss";
+
+// Настройка шрифтов и переменных
+@import "../scss/vendor/fonts.scss";
+@import "../scss/variables/variables.scss";
+
+// общие классы
+@import "../scss/utils/utilities.scss";
+
+
+// Компоненты интерфейса
+@import "../components/components.scss";
+
+// Стили для конкретных разделов
+@import "../scss/path/publick.scss";
+@import "../scss/path/cabinet.scss";

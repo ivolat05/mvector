@@ -1,0 +1,121 @@
+.select {
+	width: 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.select.is-active {
+	.select-arrow {
+		transform: rotate(180deg);
+	}
+}
+
+.select.is-active .select__body {
+	display: block;
+	box-shadow: 5px 30px 25px rgba(0, 0, 0, 0.05);
+}
+
+.select__header {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	min-height: 46px;
+	padding: 14px 16px;
+
+	border-radius: 16px;
+
+	.select-arrow {
+		flex-shrink: 0;
+		width: 20px;
+		height: 20px;
+		object-fit: contain;
+
+		@media($laptop) {
+			width: 18px;
+			height: 18px;
+		}
+
+		@media($mobile) {
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	@media($macbook) {
+		padding: 14px;
+		min-height: 44px;
+	}
+
+	@media($laptop) {
+		border-radius: 12px;
+		min-height: 40px;
+	}
+
+	@media($mobile) {
+		padding: 12px 18px;
+	}
+}
+
+.select__body-wrapp {
+	padding-right: 8px;
+
+	@media($laptop) {
+		padding-right: 7px;
+	}
+
+	@media($mobile) {
+		padding-right: 9px;
+	}
+}
+
+.select__body {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	display: none;
+	z-index: 10;
+}
+
+.select__item {
+	cursor: pointer;
+}
+
+.select__current {
+	opacity: 0.6;
+	word-break: break-all;
+	@include hideText(1);
+}
+
+.select__current.selected {
+	opacity: 1;
+}
+
+.select__label {
+	display: block;
+	position: relative;
+	cursor: pointer;
+}
+
+.select__label-input {
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+.select__item {}
+
+input:checked~.select__item {}
+
+.select__body-wrapp {
+	overflow: auto;
+	max-height: 135px;
+}
+
+.select-container-title {}

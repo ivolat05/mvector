@@ -1,0 +1,19 @@
+.label {
+	position: relative;
+	display: block;
+}
+
+.label-input {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	z-index: -11;
+	opacity: 0;
+}
+
+.label-span {
+	display: block;
+}

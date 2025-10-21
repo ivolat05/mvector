@@ -1,0 +1,27 @@
+// root
+:root {
+	--index: calc(1vw + 1vh);
+	--blue: #3442E1;
+	--burger-width: #{rem(25)};
+	--burger-height: #{rem(20)};
+	--burger-line-height: #{rem(3)};
+	--burger-color: #3442E1;
+
+	@include minw1920 {
+		--font-size-xl: max(16rem, 16px);
+		--font-line-xl: 140%;
+		--maxWidthContainer: max(1920rem, 1920px);
+		--font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-primary);
+		--shadow: 0px max(4rem, 4px) max(8rem, 8px) max(3rem, 3px) rgba(0, 0, 0, 0.15), 0px max(1rem, 1px) max(3rem, 3px) 0px rgba(0, 0, 0, 0.30);
+		--shadow-2: 0px max(10rem, 10px) max(30rem, 30px) 0px rgba(141, 140, 140, 0.25);
+		--shadow-3: max(2rem, 2px) max(2rem, 2px) max(12rem, 12px) 0 rgba(55, 57, 81, 0.15);
+	}
+
+	--font-primary: 'GothamPro',
+	sans-serif;
+	--primary-color: #91C4D9;
+	--second-collor: #E38AA8;
+}
+
+// transition
+$hover-trans: 0.4s;

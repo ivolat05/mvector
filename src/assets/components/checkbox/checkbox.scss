@@ -1,0 +1,150 @@
+.checkbox {
+	display: inline-block;
+	position: relative;
+
+	input {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: -333;
+		width: 0;
+		height: 0;
+		overflow: hidden;
+		opacity: 0;
+	}
+}
+
+.checkbox-span {
+	display: inline-block;
+	position: relative;
+	isolation: isolate;
+	padding-left: rem(30);
+	cursor: pointer;
+
+
+	font-family: 'ProximaNova';
+	font-style: normal;
+	font-weight: 600;
+	font-size: size1920(18, 14);
+	line-height: 100%;
+	color: var(--black);
+
+	@include minw1920 {
+		padding-left: max-size(30);
+		font-size: max-size(18);
+	}
+
+	@include mw760 {
+		padding-left: rem(26);
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: rem(20);
+		height: rem(20);
+		transition: $hover-trans;
+		transform: translateY(rem(-2));
+
+		@include minw1920 {
+			width: max-size(20);
+			height: max-size(20);
+			transform: translateY(max-size(-2));
+		}
+
+		@include mw760 {
+			width: rem(16);
+			height: rem(16)
+		}
+	}
+
+
+
+	a {
+		display: inline;
+		font-family: inherit;
+		font-style: inherit;
+		font-weight: inherit;
+		font-size: inherit;
+		line-height: inherit;
+		color: var(--orange-medium);
+		@include interactive-states(color, var(--orange-dark), var(--orange-dark), var(--orange-dark));
+	}
+}
+
+input[type="checkbox"]~.checkbox-span {
+	@media (hover: hover) {
+		&:hover {
+			&::after {
+				background: url("../../assets/img/icons/check-square.svg") no-repeat center center/contain, var(--cream);
+			}
+
+		}
+	}
+
+	&:focus-visible {
+		&::after {
+			background: url("../../assets/img/icons/check-square.svg") no-repeat center center/contain, var(--cream);
+		}
+	}
+
+	&:active {
+		&::after {
+			background: url("../../assets/img/icons/check-square.svg") no-repeat center center/contain, var(--cream);
+		}
+	}
+}
+
+input[type="radio"]~.checkbox-span {
+	@media (hover: hover) {
+		&:hover {
+			&::after {
+				background: url("../../assets/img/icons/circle.svg") no-repeat center center/contain, var(--cream);
+			}
+		}
+	}
+
+	&:focus-visible {
+		&::after {
+			background: url("../../assets/img/icons/circle.svg") no-repeat center center/contain, var(--cream);
+		}
+	}
+
+	&:active {
+		&::after {
+			background: url("../../assets/img/icons/circle.svg") no-repeat center center/contain, var(--cream);
+		}
+	}
+}
+
+
+input[type="checkbox"]~.checkbox-span::after {
+	background: url("../../assets/img/icons/check-square.svg") no-repeat center center/contain;
+
+	border-radius: rem(4);
+
+	@include minw1920 {
+		border-radius: max-size(4);
+	}
+}
+
+input[type="checkbox"]:checked~.checkbox-span::after {
+	background: url("../../assets/img/icons/check.svg") no-repeat center center/contain;
+	border-radius: rem(4);
+
+	@include minw1920 {
+		border-radius: max-size(4);
+	}
+}
+
+input[type="radio"]~.checkbox-span::after {
+	border-radius: 50%;
+	background: url("../../assets/img/icons/circle.svg") no-repeat center center/contain;
+}
+
+input[type="radio"]:checked~.checkbox-span::after {
+	background: url("../../assets/img/icons/check-radio.svg") no-repeat center center/contain;
+	border-radius: 50%;
+}

@@ -1,0 +1,4 @@
+/node_modules 
+/dist
+/.editorconfig
+/gulp/version.json

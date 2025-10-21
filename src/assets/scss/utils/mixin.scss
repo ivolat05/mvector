@@ -1,0 +1,254 @@
+@use 'sass:math';
+
+// media
+$min1920: 'min-width: #{rem(1930.98)}';
+$macbook: "max-width:  #{rem(1680.98)}";
+$notebook: "max-width: #{rem(1440.98)}";
+$laptop: "max-width: #{rem(1240.98)}";
+$tablet: "max-width: #{rem(992.98)}";
+$min-tablet: "min-width: #{rem(992.98)}";
+$mobile: "max-width: #{rem(767.98)}";
+$mobile-760: "max-width: #{rem(760.98)}";
+$mobile-min: "max-width: #{rem(610.98)}";
+$mobile-466: "max-width: #{rem(466.98)}";
+$mobile-400: "max-width: #{rem(400.98)}";
+$mobile-355: "max-width: #{rem(355.98)}";
+
+@mixin minw1920 {
+	@media screen and ($min1920) {
+		@content;
+	}
+}
+
+@mixin mw1680 {
+	@media screen and ($macbook) {
+		@content;
+	}
+}
+
+@mixin mw1440 {
+	@media screen and ($notebook) {
+		@content;
+	}
+}
+
+@mixin mw1240 {
+	@media screen and ($laptop) {
+		@content;
+	}
+}
+
+@mixin mw992 {
+	@media screen and ($tablet) {
+		@content;
+	}
+}
+
+@mixin minw992 {
+	@media screen and ($min-tablet) {
+		@content;
+	}
+}
+
+@mixin mw767 {
+	@media screen and ($mobile) {
+		@content;
+	}
+}
+
+@mixin mw760 {
+	@media screen and ($mobile-760) {
+		@content;
+	}
+}
+
+@mixin mw610 {
+	@media screen and ($mobile-min) {
+		@content;
+	}
+}
+
+@mixin mw466 {
+	@media screen and ($mobile-466) {
+		@content;
+	}
+}
+
+@mixin mw400 {
+	@media screen and ($mobile-400) {
+		@content;
+	}
+}
+
+@mixin mw355 {
+	@media screen and ($mobile-355) {
+		@content;
+	}
+}
+
+@mixin portrait {
+	@media (orientation: portrait) {
+		@content;
+	}
+}
+
+@mixin landscape {
+	@media (orientation: landscape) {
+		@content;
+	}
+}
+
+@mixin print {
+	@media print {
+		@content;
+	}
+}
+
+/*состояния наведения*/
+@mixin interactive-states($property, $hover-value, $focus-value: null, $active-value: null) {
+	transition: $hover-trans;
+	outline: none;
+
+	@media (hover: hover) {
+		&:hover {
+			#{$property}: $hover-value;
+		}
+	}
+
+	&:focus-visible {
+		#{$property}: if($focus-value, $focus-value, $hover-value);
+	}
+
+	&:active {
+		#{$property}: if($active-value, $active-value, $hover-value);
+	}
+}
+
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: #{$font_name};
+		font-display: swap;
+		src: url("../../assets/fonts/#{$file_name}.woff") format("woff"),
+		url("../../assets/fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+@mixin hideText($count_line) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: #{$count_line};
+	-webkit-box-orient: vertical;
+}
+
+/* @include fluid-text(40, 28)
+адаптивный шрифт
+$max- максимальный размер шрифта
+	$min- минимальный размер шрифта
+*/
+@mixin fluid-text($max: 32, $min: 20) {
+	// максимальная ширина сайта по макету
+	$maxViewportWidth: 1880;
+	// минимальная ширина сайта по макету
+	$minViewportWidth: 320;
+
+	$maxSize: math.div($max, 16);
+	$minSize: math.div($min, 16);
+	$maxWidth: math.div($maxViewportWidth, 16);
+	$minWidth: math.div($minViewportWidth, 16);
+
+	$slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+	$yAxisIntersection: -$minWidth * $slope + $minSize;
+
+	font-size: clamp(#{$minSize * 1rem},
+		#{$yAxisIntersection * 1rem} + #{$slope * 100vw},
+		#{$maxSize * 1rem});
+}
+
+@mixin imgBox($width: rem(20), $height: rem(20), $imgWidth: 100%, $imgHeight: 100%) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: $width;
+	height: $height;
+
+	img,
+	svg {
+		flex-shrink: 0;
+		width: $imgWidth;
+		height: $imgHeight;
+		object-fit: contain;
+	}
+}
+
+@mixin burger {
+	width: var(--burger-width);
+	height: var(--burger-height);
+	position: relative;
+	color: #000;
+
+	&-line {
+		border-radius: rem(2);
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+		height: var(--burger-line-height);
+		background-color: var(--burger-color);
+		transition: transform $hover-trans ease-in-out;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: var(--burger-line-height);
+		background-color: var(--burger-color);
+		transition: transform $hover-trans ease-in-out, top $hover-trans ease-in-out;
+		border-radius: rem(2);
+	}
+
+	&::before {
+		top: 0;
+	}
+
+	&::after {
+		top: calc(100% - var(--burger-line-height));
+	}
+
+	&.-is-active {
+		.header__burger-line {
+			transform: scale(0);
+			transition: transform $hover-trans ease-in-out;
+		}
+
+		&::before {
+			transform: rotate(45deg);
+			top: 50%;
+			transition: transform $hover-trans ease-in-out, top $hover-trans ease-in-out;
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+			top: 50%;
+			transition: transform $hover-trans ease-in-out, top $hover-trans ease-in-out;
+		}
+	}
+}
+
+@mixin scrollStyle($back: var(--blue)) {
+	background: $back;
+	width: rem(6);
+	border-radius: rem(14);
+
+	@include minw1920 {
+		width: max(6rem, 6px);
+		border-radius: max(14rem, 14px);
+	}
+}

@@ -1,0 +1,25 @@
+.tab-box {
+	display: none;
+
+}
+
+.tab-box.tab--active {
+	display: block;
+}
+
+.tab-row {
+	display: flex;
+	width: fit-content;
+	position: relative;
+
+}
+
+.tab__label {
+	width: fit-content;
+	display: block;
+
+}
+
+.tab__label-span {}
+
+input:checked~.tab__label-span {}
