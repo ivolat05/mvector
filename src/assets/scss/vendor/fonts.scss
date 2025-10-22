@@ -1,33 +1,9 @@
 @font-face {
-	font-family: 'GothamPro';
-	font-display: swap;
-	src: url("../../assets/fonts/GothamPro-Bold.woff2") format("woff2"),
-	 url("../../assets/fonts/GothamPro-Bold.woff") format("woff");
-	font-weight: 700;
-	font-style:normal;
-}
-@font-face {
-	font-family: 'GothamPro';
-	font-display: swap;
-	src: url("../../assets/fonts/GothamPro.woff2") format("woff2"),
-	 url("../../assets/fonts/GothamPro.woff") format("woff");
-	font-weight: 400;
-	font-style:normal;
-}
-@font-face {
-	font-family: 'GothamPro';
-	font-display: swap;
-	src: url("../../assets/fonts/GothamPro-Medium.woff2") format("woff2"),
-	 url("../../assets/fonts/GothamPro-Medium.woff") format("woff");
-	font-weight: 500;
-	font-style:normal;
-}
-@font-face {
 	font-family: 'Montserrat';
 	font-display: swap;
-	src: url("../../assets/fonts/Montserrat-Medium.woff2") format("woff2"),
-	 url("../../assets/fonts/Montserrat-Medium.woff") format("woff");
-	font-weight: 500;
+	src: url("../../assets/fonts/Montserrat-Bold.woff2") format("woff2"),
+	 url("../../assets/fonts/Montserrat-Bold.woff") format("woff");
+	font-weight: 700;
 	font-style:normal;
 }
 @font-face {
@@ -41,32 +17,16 @@
 @font-face {
 	font-family: 'Montserrat';
 	font-display: swap;
-	src: url("../../assets/fonts/Montserrat-Bold.woff2") format("woff2"),
-	 url("../../assets/fonts/Montserrat-Bold.woff") format("woff");
-	font-weight: 700;
-	font-style:normal;
-}
-@font-face {
-	font-family: 'Raleway';
-	font-display: swap;
-	src: url("../../assets/fonts/Raleway-Bold.woff2") format("woff2"),
-	 url("../../assets/fonts/Raleway-Bold.woff") format("woff");
-	font-weight: 700;
-	font-style:normal;
-}
-@font-face {
-	font-family: 'Raleway';
-	font-display: swap;
-	src: url("../../assets/fonts/Raleway-Regular.woff2") format("woff2"),
-	 url("../../assets/fonts/Raleway-Regular.woff") format("woff");
+	src: url("../../assets/fonts/Montserrat-regularitalic.woff2") format("woff2"),
+	 url("../../assets/fonts/Montserrat-regularitalic.woff") format("woff");
 	font-weight: 400;
-	font-style:normal;
+	font-style:italic;
 }
 @font-face {
-	font-family: 'Raleway';
+	font-family: 'Montserrat';
 	font-display: swap;
-	src: url("../../assets/fonts/Raleway-Medium.woff2") format("woff2"),
-	 url("../../assets/fonts/Raleway-Medium.woff") format("woff");
+	src: url("../../assets/fonts/Montserrat-Medium.woff2") format("woff2"),
+	 url("../../assets/fonts/Montserrat-Medium.woff") format("woff");
 	font-weight: 500;
 	font-style:normal;
 }

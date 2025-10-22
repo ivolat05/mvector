@@ -82,8 +82,21 @@
 	justify-content: right;
 }
 
+.flex-row {
+	flex-direction: row;
+}
+
+
 .flex-row-rever {
 	flex-direction: row-reverse;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.flex-column-reverse {
+	flex-direction: column-reverse;
 }
 
 .f-wrap {

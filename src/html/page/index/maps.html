@@ -1,0 +1,520 @@
+<section class="maps">
+	<div class="container maps__container">
+		<img class="maps-img" src="assets/img/map.svg" alt="Карта России">
+		<div class="maps__wrapp">
+			<div class="maps__btns">
+				<button data-map-id="map-1" type="button" class="maps-btn maps-btn-1">
+					1
+				</button>
+				<button data-map-id="map-2" type="button" class="maps-btn maps-btn-2">
+					3
+				</button>
+				<button data-map-id="map-3" type="button" class="maps-btn maps-btn-3">
+					2
+				</button>
+				<button data-map-id="map-2" type="button" class="maps-btn maps-btn-4">
+					2
+				</button>
+				<button data-map-id="map-1" type="button" class="maps-btn maps-btn-5">
+					2
+				</button>
+				<button data-map-id="map-2" type="button" class="maps-btn maps-btn-6">
+					7
+				</button>
+				<button data-map-id="map-1" type="button" class="maps-btn maps-btn-7">
+					8
+				</button>
+				<button data-map-id="map-2" type="button" class="maps-btn maps-btn-8">
+					14
+				</button>
+
+			</div>
+			<div class="maps__info">
+				<div id="map-1" class="maps__info-tab">
+					<div class="maps__info-list">
+						<a href="#" class="maps__info-link flex flex-column">
+							<h3 class="maps__info-date">
+								12-13 февраля
+							</h3>
+							<p class="maps__info-subtext">
+								XI Всероссийский медицинский форум «Ильменские встречи» «Актуальные вопросы
+								совершенствования медицинской помощи» в рамках приоритетного регионального проекта
+								«Город-Университет»
+							</p>
+							<div class="maps__info-place flex ai-c jc-fs">
+								<img src="assets/img/icons/Location.svg" alt="">
+								<span>
+									Великий Новгород
+								</span>
+							</div>
+						</a>
+						<a href="#" class="maps__info-link flex flex-column">
+							<h3 class="maps__info-date">
+								19 февраля
+							</h3>
+							<p class="maps__info-subtext">
+								IX Державинский медицинский форум «Актуальные вопросы врачебной практики»
+							</p>
+							<div class="maps__info-place flex ai-c jc-fs">
+								<img src="assets/img/icons/Location.svg" alt="">
+								<span>
+									Тамбов
+								</span>
+							</div>
+						</a>
+						<a href="#" class="maps__info-link flex flex-column">
+							<h3 class="maps__info-date">
+								5 марта
+							</h3>
+							<p class="maps__info-subtext">
+								XII Междисциплинарная научно-практическая конференция «Актуальные вопросы
+								совершенствования медицинской помощи» «Мещерские встречи»
+							</p>
+							<div class="maps__info-place flex ai-c jc-fs">
+								<img src="assets/img/icons/Location.svg" alt="">
+								<span>
+									рязань
+								</span>
+							</div>
+						</a>
+
+					</div>
+					<button type="button" class="maps__info-btn btn">
+						Еще
+					</button>
+				</div>
+				<div id="map-2" class="maps__info-tab">
+					<div class="maps__info-list">
+						<a href="#" class="maps__info-link flex flex-column">
+							<h3 class="maps__info-date">
+								12-13 февраля
+							</h3>
+							<p class="maps__info-subtext">
+								XI Всероссийский медицинский форум «Ильменские встречи» «Актуальные вопросы
+								совершенствования медицинской помощи» в рамках приоритетного регионального проекта
+								«Город-Университет»
+							</p>
+							<div class="maps__info-place flex ai-c jc-fs">
+								<img src="assets/img/icons/Location.svg" alt="">
+								<span>
+									Великий Новгород
+								</span>
+							</div>
+						</a>
+					</div>
+					<button type="button" class="maps__info-btn btn">
+						Еще
+					</button>
+				</div>
+				<div id="map-3" class="maps__info-tab">
+					<div class="maps__info-list">
+					</div>
+				</div>
+				<div class="maps__info-text flex ai-c jc-c flex-column">
+					<h1>
+						Текст, который будет отображаться без привязки к округу.
+					</h1>
+					<h2>
+						Что то про деятельность компании
+					</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="maps__fillter">
+	<div class="maps__fillter-accordion container accordion">
+		<button type="button" class="maps__fillter-btn accordion-btn">
+			<span>
+				ЦФО
+			</span>
+			<span>
+				СЗФО
+			</span>
+			<span>
+				ЮФО
+			</span>
+			<span>
+				СКФО
+			</span>
+			<span>
+				ПФО
+			</span>
+			<span>
+				УФО
+			</span>
+			<span>
+				СФО
+			</span>
+			<span>
+				ДФО
+			</span>
+			<span class="maps__fillter-arrow">
+				<img src="assets/img/icons/arrow-bottom.svg" alt="Стрелка">
+			</span>
+		</button>
+		<div class="maps__fillter-body accordion__body">
+			<ul class="maps__fillter-list">
+				<li class="maps__fillter-inner">
+					<ul class="maps__fillter-sublist">
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="">
+								<span class="maps__fillter-label-span label-span">
+									Белгород
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Брянск">
+								<span class="maps__fillter-label-span label-span">
+									Брянск
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Владимир">
+								<span class="maps__fillter-label-span label-span">
+									Владимир
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Воронеж">
+								<span class="maps__fillter-label-span label-span">
+									Воронеж
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Калуга">
+								<span class="maps__fillter-label-span label-span">
+									Калуга
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Курск">
+								<span class="maps__fillter-label-span label-span">
+									Курск
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Москва">
+								<span class="maps__fillter-label-span label-span">
+									Москва
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Орел">
+								<span class="maps__fillter-label-span label-span">
+									Орел
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Рязань">
+								<span class="maps__fillter-label-span label-span">
+									Рязань
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Тамбов">
+								<span class="maps__fillter-label-span label-span">
+									Тамбов
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Тверь">
+								<span class="maps__fillter-label-span label-span">
+									Тверь
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Тула">
+								<span class="maps__fillter-label-span label-span">
+									Тула
+								</span>
+							</label>
+						</li>
+					</ul>
+				</li>
+
+				<li class="maps__fillter-inner">
+					<ul class="maps__fillter-sublist">
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Архангельск">
+								<span class="maps__fillter-label-span label-span">
+									Архангельск
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Великий Новгород">
+								<span class="maps__fillter-label-span label-span">
+									Великий Новгород
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Вологда">
+								<span class="maps__fillter-label-span label-span">
+									Вологда
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Калининград">
+								<span class="maps__fillter-label-span label-span">
+									Калининград
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Мурманск">
+								<span class="maps__fillter-label-span label-span">
+									Мурманск
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Петрозаводск">
+								<span class="maps__fillter-label-span label-span">
+									Петрозаводск
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Псков">
+								<span class="maps__fillter-label-span label-span">
+									Псков
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Санкт-Петербург">
+								<span class="maps__fillter-label-span label-span">
+									Санкт-Петербург
+								</span>
+							</label>
+						</li>
+					</ul>
+				</li>
+
+				<li class="maps__fillter-inner">
+					<ul class="maps__fillter-sublist">
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Краснодар">
+								<span class="maps__fillter-label-span label-span">
+									Краснодар
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Севастополь">
+								<span class="maps__fillter-label-span label-span">
+									Севастополь
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Ялта">
+								<span class="maps__fillter-label-span label-span">
+									Ялта
+								</span>
+							</label>
+						</li>
+					</ul>
+				</li>
+
+				<li class="maps__fillter-inner">
+					<ul class="maps__fillter-sublist">
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Минеральные Воды">
+								<span class="maps__fillter-label-span label-span">
+									Минеральные Воды
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Ставрополь">
+								<span class="maps__fillter-label-span label-span">
+									Ставрополь
+								</span>
+							</label>
+						</li>
+					</ul>
+				</li>
+
+				<li class="maps__fillter-inner">
+					<ul class="maps__fillter-sublist">
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Ижевск">
+								<span class="maps__fillter-label-span label-span">
+									Ижевск
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Казань">
+								<span class="maps__fillter-label-span label-span">
+									Казань
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Оренбург">
+								<span class="maps__fillter-label-span label-span">
+									Оренбург
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Пенза">
+								<span class="maps__fillter-label-span label-span">
+									Пенза
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Самара">
+								<span class="maps__fillter-label-span label-span">
+									Самара
+								</span>
+							</label>
+						</li>
+					</ul>
+				</li>
+
+				<li class="maps__fillter-inner">
+					<ul class="maps__fillter-sublist">
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Екатеринбург">
+								<span class="maps__fillter-label-span label-span">
+									Екатеринбург
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Тюмень">
+								<span class="maps__fillter-label-span label-span">
+									Тюмень
+								</span>
+							</label>
+						</li>
+					</ul>
+				</li>
+
+				<li class="maps__fillter-inner">
+					<ul class="maps__fillter-sublist">
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Иркутск">
+								<span class="maps__fillter-label-span label-span">
+									Иркутск
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Красноярск">
+								<span class="maps__fillter-label-span label-span">
+									Красноярск
+								</span>
+							</label>
+						</li>
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Омск">
+								<span class="maps__fillter-label-span label-span">
+									Омск
+								</span>
+							</label>
+						</li>
+					</ul>
+				</li>
+
+				<li class="maps__fillter-inner">
+					<ul class="maps__fillter-sublist">
+						<li class="maps__fillter-subinner">
+							<label class="maps__fillter-label label">
+								<input type="checkbox" name="city" class="label-input" value="Улан-Удэ">
+								<span class="maps__fillter-label-span label-span">
+									Улан-Удэ
+								</span>
+							</label>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="maps__mobile">
+	<div class="container maps__mobile-container">
+
+		<div class="maps__mobile-top flex jc-fs">
+			<button data-open-modal="modal-district" type="button" class="maps__mobile-btn">
+				<span>
+					Федеральный округ
+				</span>
+				<svg width="17" height="8" viewBox="0 0 17 8">
+					<use xlink:href="assets/img/sprite.svg#arrow-fillter"></use>
+				</svg>
+			</button>
+			<button data-open-modal="modal-city" type="button" class="maps__mobile-btn">
+				<span>
+					Город
+				</span>
+				<svg width="17" height="8" viewBox="0 0 17 8">
+					<use xlink:href="assets/img/sprite.svg#arrow-fillter"></use>
+				</svg>
+			</button>
+		</div>
+		<div class="maps__mobile-bottom flex ai-c jc-sb">
+			<p class="maps__mobile-text">
+				Найдено:<br>
+				5 мероприятий
+			</p>
+			<a href="#" target="_blank" class="maps__mobile-link btn">
+				Смотреть
+			</a>
+		</div>
+	</div>
+</section>

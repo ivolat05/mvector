@@ -1,9 +1,6 @@
 --include("../components/header/header.js");
 --include("../components/footer/footer.js");
---include("../components/avatar/avatar.js");
---include("../components/checkbox-tree/checkbox-tree.js");
---include("../components/files/files.js");
 --include("../components/modal/modal.js");
 --include("../components/select/select.js");
---include("../components/tabs/tabs.js");
---include("../components/tooltip/tippy-install.js");
+--include("../components/accordion/accordion.js");
+--include("../components/checkbox/rezet-checkbox.js");

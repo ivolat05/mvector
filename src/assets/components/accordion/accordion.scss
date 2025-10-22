@@ -3,20 +3,3 @@
 	transition: $hover-trans;
 	overflow: hidden;
 }
-
-.accordion-btn {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	gap: rem(10);
-	text-align: left;
-	font-style: normal;
-
-	&.is-active {
-
-		.accordion-btn-icon {
-			transform: rotate(180deg);
-		}
-	}
-
-}

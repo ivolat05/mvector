@@ -1,0 +1,522 @@
+.maps {
+
+	margin-top: rem(75);
+
+	@include mw992 {
+		margin-top: rem(60);
+	}
+
+	&-img {
+		width: 100%;
+		object-fit: contain;
+	}
+
+	&__container {
+		padding-right: rem(30);
+		position: relative;
+
+		@include mw1240 {
+			padding-right: rem(5);
+		}
+	}
+
+	&__wrapp {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		display: grid;
+		grid-template-columns: 1fr rem(432);
+
+		padding-top: rem(65);
+
+		@include mw1240 {
+			grid-template-columns: 1fr rem(350);
+			padding-right: rem(15);
+		}
+
+		@include mw992 {
+			display: block;
+			padding-right: 0;
+			padding-top: 0;
+		}
+	}
+
+	.maps__info {
+		height: 100%;
+		overflow: auto;
+
+		@include mw992 {
+			display: none;
+		}
+
+		&-text {
+			width: 100%;
+			padding: rem(22) rem(43) rem(45) rem(26);
+			gap: rem(15);
+			min-height: rem(540);
+			background: var(--color-white-opacity-75);
+
+			@include mw1240 {
+				min-height: rem(460);
+			}
+
+			h2,
+			h1 {
+				font-size: rem(22);
+				line-height: 110%;
+				text-align: center;
+				text-transform: uppercase;
+				color: var(--color-primary);
+			}
+		}
+
+		&-tab {
+			display: none;
+			position: relative;
+
+			&::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: rem(3);
+				height: calc(100% - rem(55));
+				background: var(--color-primary);
+			}
+
+			&.-is-active {
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+			}
+
+			&.-is-active~.maps__info-text {
+				display: none;
+			}
+		}
+
+		&-list {
+			height: rem(555);
+			padding-left: rem(12);
+			padding-right: rem(12);
+			overflow: auto;
+
+			display: flex;
+			flex-direction: column;
+			gap: rem(15);
+
+			@include mw1240 {
+				height: rem(490);
+			}
+
+			@media(max-width:rem(1140.99)) {
+				height: rem(430);
+			}
+		}
+
+		&-date {
+			color: var(--color-primary);
+			text-transform: uppercase;
+
+		}
+
+		&-subtext {
+			font-weight: 500;
+			line-height: 124%;
+			color: var(--color-black);
+			padding-top: rem(15);
+		}
+
+		&-place {
+			font-weight: 700;
+			font-size: rem(15);
+			line-height: 110%;
+			text-transform: uppercase;
+			color: var(--color-primary);
+			gap: rem(7);
+			margin-top: rem(20);
+
+			img,
+			svg {
+				flex-shrink: 0;
+				width: rem(17);
+				height: rem(17);
+				object-fit: contain;
+			}
+		}
+
+		&-link {
+			padding: rem(16);
+			background: var(--color-white);
+			border: rem(1) solid var(--color-primary);
+			box-shadow: var(--shadow-dark);
+		}
+
+		&-btn {
+			margin-top: auto;
+			margin-bottom: 0;
+			margin-left: auto;
+			margin-right: auto;
+			min-width: rem(200);
+
+			font-size: rem(16);
+		}
+	}
+
+	&__btns {
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		position: relative;
+
+	}
+
+	&-btn {
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		left: 28%;
+		top: 11%;
+
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: rem(36);
+		line-height: 100%;
+		color: var(--color-primary);
+		width: rem(63);
+		height: rem(63);
+		border: rem(1) solid var(--color-primary);
+
+		background: var(--color-white-opacity-75);
+		@include interactive-states(color, var(--color-dark), var(--color-accent), var(--color-accent));
+		@include interactive-states(border-color, var(--color-dark), var(--color-accent), var(--color-accent));
+
+		@include mw992 {
+			width: rem(26);
+			height: rem(26);
+			font-size: rem(14);
+		}
+
+		&.-is-active {
+			background: var(--color-primary);
+			color: var(--color-white);
+			@include interactive-states(color, var(--color-white), var(--color-white), var(--color-white));
+			@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+			z-index: var(--z-index-1);
+
+			&::after {
+				content: "";
+				position: absolute;
+				width: 100vw;
+				height: rem(1);
+				background: var(--color-primary);
+				top: 50%;
+				left: 100%;
+				transform: translateY(-50%);
+
+				@include mw992 {
+					width: 0;
+					height: 0;
+					background: none;
+				}
+			}
+
+		}
+
+		&-1 {
+			width: rem(84);
+			height: rem(84);
+			top: 33%;
+			left: 88%;
+
+			@include mw1240 {
+				left: 86%;
+			}
+
+			@include mw992 {
+				width: rem(35);
+				height: rem(35);
+				top: 39%;
+				left: 65%;
+			}
+
+
+
+		}
+
+		&-2 {
+			width: rem(84);
+			height: rem(84);
+			top: 42%;
+			left: 67%;
+
+			@include mw992 {
+				width: rem(35);
+				height: rem(35);
+				top: 46%;
+				left: 46%;
+			}
+
+			&.-is-active {
+				&::after {
+					transform: translateY(-50%) rotate(-8deg);
+					transform-origin: 0 0;
+				}
+			}
+		}
+
+		&-3 {
+			top: 38%;
+			left: 44%;
+
+			@include mw992 {
+				top: 44%;
+				left: 34%;
+			}
+
+			&.-is-active {
+				&::after {
+					transform: translateY(-50%) rotate(1deg);
+					transform-origin: 0 0;
+				}
+			}
+		}
+
+		&-4 {
+			top: 54%;
+			left: 9%;
+
+			@include mw992 {
+				top: 62%;
+				left: 7%;
+			}
+
+			&.-is-active {
+				&::after {
+					transform: translateY(-50%) rotate(-7deg);
+					transform-origin: 0 0;
+				}
+			}
+		}
+
+		&-5 {
+			top: 43%;
+			left: 7%;
+
+			@include mw992 {
+				top: 50%;
+				left: 5%;
+			}
+
+			&.-is-active {
+				&::after {
+					transform: translateY(-50%) rotate(-2deg);
+					transform-origin: 0 0;
+				}
+			}
+		}
+
+		&-6 {
+			top: 50%;
+			left: 28%;
+
+			@include mw992 {
+				top: 47%;
+				left: 19%;
+			}
+
+			&.-is-active {
+				&::after {
+					transform: translateY(-50%) rotate(-6deg);
+					transform-origin: 0 0;
+				}
+			}
+		}
+
+		&-7 {
+			top: 11%;
+			left: 28%;
+
+			@include mw992 {
+				top: 20%;
+				left: 20%;
+			}
+
+			&.-is-active {
+				&::after {
+					transform: translateY(-50%) rotate(18deg);
+					transform-origin: 0 0;
+				}
+			}
+		}
+
+		&-8 {
+			top: 25%;
+			left: 19%;
+
+			@include mw992 {
+				top: 31%;
+				left: 13%;
+			}
+
+			&.-is-active {
+				&::after {
+					transform: translateY(-50%) rotate(8deg);
+					transform-origin: 0 0;
+				}
+			}
+		}
+	}
+
+	&__fillter {
+		padding-top: rem(30);
+
+		@include mw992 {
+			display: none;
+		}
+
+		&-list,
+		&-btn {
+			width: 100%;
+			display: grid;
+			grid-template-columns: repeat(8, 1fr);
+			gap: rem(5);
+		}
+
+
+		&-btn {
+			font-family: 'Montserrat';
+			font-style: normal;
+			font-weight: 700;
+			font-size: rem(14);
+			line-height: 110%;
+			text-align: left;
+
+			color: var(--color-primary);
+			padding-bottom: rem(15);
+			border-bottom: rem(1) solid var(--color-primary);
+
+			position: relative;
+			transition: $hover-trans;
+			outline: none;
+
+			@media (hover: hover) {
+				&:hover {
+					.maps__fillter-arrow {
+						background: var(--color-dark);
+					}
+				}
+			}
+
+			&:focus-visible {
+				.maps__fillter-arrow {
+					background: var(--color-accent);
+				}
+			}
+
+			&:active {
+				.maps__fillter-arrow {
+					background: var(--color-accent);
+				}
+			}
+
+			&.is-active {
+				.maps__fillter-arrow {
+					transform: translate(-50%, 50%) rotate(180deg);
+				}
+			}
+		}
+
+		&-arrow {
+			@include imgBox(rem(28), rem(28), rem(15), rem(8));
+			border-radius: 50%;
+			background: var(--color-primary);
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			border: rem(1) solid var(--color-white);
+			transform: translate(-50%, 50%);
+			box-shadow: var(--shadow-black);
+			transition: var(--hover-trans);
+		}
+
+		&-list {
+			padding-top: rem(15);
+		}
+
+		&-sublist {
+			display: flex;
+			flex-direction: column;
+			gap: rem(9);
+		}
+
+		&-label {
+			&-span {
+
+				font-family: 'Montserrat';
+				font-style: normal;
+				font-weight: 400;
+				font-size: rem(12);
+				line-height: 110%;
+				color: var(--color-black);
+				cursor: pointer;
+				@include interactive-states(color, var(--color-dark), var(--color-accent), var(--color-accent));
+			}
+
+			input:checked~&-span {
+				color: var(--color-border);
+			}
+		}
+	}
+
+	&__mobile {
+		padding-top: rem(20);
+		display: none;
+
+		@include mw992 {
+			display: block;
+		}
+
+		&-top {
+			gap: rem(40);
+			border-bottom: rem(1) solid var(--color-primary);
+			padding-bottom: rem(7);
+		}
+
+		&-btn {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			fill: var(--color-primary);
+			gap: 10px;
+
+			font-family: 'Montserrat';
+			font-style: normal;
+			font-weight: 700;
+			font-size: rem(14);
+			line-height: 110%;
+			color: var(--color-primary);
+			@include interactive-states(fill, var(--color-dark), var(--color-accent), var(--color-accent));
+			@include interactive-states(color, var(--color-dark), var(--color-accent), var(--color-accent));
+
+			img,
+			svg {
+				flex-shrink: 0;
+			}
+		}
+
+		&-bottom {
+			padding-top: rem(12);
+		}
+
+		&-link {
+			width: rem(142);
+			font-size: rem(16);
+		}
+	}
+}

@@ -1,0 +1,271 @@
+.header {
+	background: var(--color-white);
+	box-shadow: var(--shadow);
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: var(--z-index-1);
+
+	&__container {
+		display: grid;
+		grid-template-columns: rem(286) 1fr;
+		gap: rem(24);
+
+		@include mw1240 {
+			grid-template-columns: rem(196) 1fr;
+			gap: rem(15);
+			padding-left: 0;
+		}
+
+		@include mw992 {
+
+			padding-right: rem(16);
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			gap: rem(10);
+		}
+
+
+	}
+
+	&__logo {
+		width: 100%;
+
+		background: var(--color-primary);
+		padding: rem(6) rem(12);
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		flex-direction: column;
+		gap: rem(5);
+
+		@include mw992 {
+			width: rem(196);
+		}
+
+		img {
+			width: 100%;
+			object-fit: contain;
+		}
+
+		&-text {
+			width: 100%;
+			color: var(--color-white);
+			font-size: rem(12);
+			line-height: 110%;
+			padding-left: rem(53);
+
+			@include mw1240 {
+				font-size: rem(10);
+				padding-left: rem(35);
+			}
+		}
+	}
+
+	&__btn {
+		min-width: rem(182);
+		height: rem(35);
+		fill: var(--color-primary);
+		@include interactive-states(fill, var(--color-dark), var(--color-accent), var(--color-accent));
+
+		svg,
+		img {
+			display: none;
+		}
+
+		@include mw992 {
+			background: none;
+			@include interactive-states(background, none, none, none);
+			padding: 0;
+			width: rem(18);
+			height: rem(18);
+			min-width: 0;
+
+			svg,
+			img {
+				width: 100%;
+				height: 100%;
+			}
+
+			span {
+				display: none;
+
+			}
+
+			svg,
+			img {
+				display: block;
+			}
+		}
+	}
+
+	&__search {
+		width: rem(307);
+		flex-shrink: 0;
+
+		@include mw992 {
+			width: 100%;
+			margin-top: rem(17);
+		}
+	}
+
+	&__wrapp {
+		padding: rem(18) 0 rem(11);
+		display: flex;
+		flex-direction: column;
+		gap: rem(16);
+
+		@include mw992 {
+			padding-top: rem(10);
+			padding-bottom: rem(10);
+		}
+
+		&-container {
+			gap: rem(15);
+
+			@include mw992 {
+				gap: rem(18);
+			}
+		}
+
+	}
+
+	&__message {
+		&-list {
+			gap: rem(20);
+
+			@include mw992 {
+				flex-direction: column-reverse;
+				align-items: flex-start;
+				padding-top: rem(30);
+				margin-top: rem(30);
+				border-top: rem(1) solid var(--color-primary);
+			}
+		}
+
+		&-social {
+			@include imgBox(rem(35), rem(35), rem(22), rem(22));
+			border-radius: 50%;
+			background: var(--color-primary);
+			@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+		}
+
+		&-link {
+			gap: rem(7);
+
+			font-style: normal;
+			font-weight: 400;
+			font-size: rem(14);
+			line-height: 110%;
+			color: var(--color-primary);
+			fill: var(--color-primary);
+			@include interactive-states(color, var(--color-dark), var(--color-accent), var(--color-accent));
+			@include interactive-states(fill, var(--color-dark), var(--color-accent), var(--color-accent));
+
+			img,
+			svg {
+				flex-shrink: 0;
+				object-fit: contain;
+				width: rem(22);
+			}
+		}
+	}
+
+	&__nav {
+		@include mw992 {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100dvh;
+			z-index: var(--z-index-4);
+			transform: translateY(-100%);
+			overflow: auto;
+			transition: var(--hover-trans);
+			background: var(--color-white);
+			padding: 0 rem(10) rem(10) rem(10);
+
+			&.-is-active {
+				transform: translate(0);
+			}
+		}
+
+		&-list {
+			@include mw992 {
+				flex-direction: column;
+				align-items: flex-start;
+				padding-top: rem(22);
+				gap: rem(16);
+			}
+		}
+
+		&-logo {
+			width: rem(170);
+
+			img,
+			svg {
+				width: 100%;
+				object-fit: contain;
+			}
+		}
+
+		&-header {
+			display: none;
+			padding: rem(7) rem(10);
+			background: #004D7D;
+			box-shadow: var(--shadow);
+			width: calc(100% + rem(20));
+			align-items: center;
+			justify-content: space-between;
+			margin-left: rem(-10);
+			margin-right: rem(-10);
+
+			@include mw992 {
+				display: flex;
+			}
+		}
+
+		&-btn {
+			@include imgBox(rem(16), rem(16));
+			stroke: var(--color-white);
+			@include interactive-states(stroke, var(--color-dark), var(--color-accent), var(--color-accent));
+
+		}
+
+		&-inner {
+			a {
+				font-family: 'Montserrat';
+				font-style: normal;
+				font-weight: 700;
+				font-size: rem(15);
+				line-height: 110%;
+				color: var(--color-primary);
+				@include interactive-states(color, var(--color-dark), var(--color-accent), var(--color-accent));
+
+				@include mw992 {
+					font-size: rem(14);
+				}
+			}
+		}
+	}
+
+	&__mob-message,
+	&__open-menu {
+		@include imgBox(rem(22), rem(22));
+		fill: var(--color-primary);
+		@include interactive-states(fill, var(--color-dark), var(--color-accent), var(--color-accent));
+		display: none;
+
+		@include mw992 {
+			display: flex;
+		}
+	}
+
+	&__open-menu {
+		width: rem(20);
+		height: rem(20);
+	}
+
+}

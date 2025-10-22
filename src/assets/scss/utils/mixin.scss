@@ -150,7 +150,7 @@ $max- максимальный размер шрифта
 */
 @mixin fluid-text($max: 32, $min: 20) {
 	// максимальная ширина сайта по макету
-	$maxViewportWidth: 1880;
+	$maxViewportWidth: 1240;
 	// минимальная ширина сайта по макету
 	$minViewportWidth: 320;
 
@@ -184,71 +184,8 @@ $max- максимальный размер шрифта
 	}
 }
 
-@mixin burger {
-	width: var(--burger-width);
-	height: var(--burger-height);
-	position: relative;
-	color: #000;
-
-	&-line {
-		border-radius: rem(2);
-		position: absolute;
-		left: 0;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 100%;
-		height: var(--burger-line-height);
-		background-color: var(--burger-color);
-		transition: transform $hover-trans ease-in-out;
-	}
-
-	&::before,
-	&::after {
-		content: "";
-		position: absolute;
-		left: 0;
-		width: 100%;
-		height: var(--burger-line-height);
-		background-color: var(--burger-color);
-		transition: transform $hover-trans ease-in-out, top $hover-trans ease-in-out;
-		border-radius: rem(2);
-	}
-
-	&::before {
-		top: 0;
-	}
-
-	&::after {
-		top: calc(100% - var(--burger-line-height));
-	}
-
-	&.-is-active {
-		.header__burger-line {
-			transform: scale(0);
-			transition: transform $hover-trans ease-in-out;
-		}
-
-		&::before {
-			transform: rotate(45deg);
-			top: 50%;
-			transition: transform $hover-trans ease-in-out, top $hover-trans ease-in-out;
-		}
-
-		&::after {
-			transform: rotate(-45deg);
-			top: 50%;
-			transition: transform $hover-trans ease-in-out, top $hover-trans ease-in-out;
-		}
-	}
-}
-
 @mixin scrollStyle($back: var(--blue)) {
 	background: $back;
-	width: rem(6);
-	border-radius: rem(14);
-
-	@include minw1920 {
-		width: max(6rem, 6px);
-		border-radius: max(14rem, 14px);
-	}
+	width: rem(5);
+	border-radius: rem(40);
 }

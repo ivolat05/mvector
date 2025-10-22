@@ -14,9 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	function parseAdaptableElements(nodes) {
 		return Array.from(nodes).map((node) => {
 			const data = node.dataset.adaptBlock.trim();
-			const [targetSelector, breakpoint = "767", position = "last"] = data
-				.split(",")
-				.map((item) => item.trim());
+			const [
+				targetSelector,
+				breakpoint = `${pxToSwiper(767)}`,
+				position = "last",
+			] = data.split(",").map((item) => item.trim());
 			return {
 				element: node,
 				originalParent: node.parentNode,
@@ -97,7 +99,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			new Set(
 				adaptableObjects.map(
 					(obj) =>
-						`(${type}-width: ${obj.breakpoint}px),${obj.breakpoint}`
+						`(${type}-width: ${pxToSwiper(
+							obj.breakpoint
+						)}px),${pxToSwiper(obj.breakpoint)}`
 				)
 			)
 		);
@@ -106,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			const [mediaQuery, breakpoint] = query.split(",");
 			const matchMedia = window.matchMedia(mediaQuery);
 			const filteredObjects = adaptableObjects.filter(
-				(obj) => obj.breakpoint === parseInt(breakpoint, 10)
+				(obj) => pxToSwiper(obj.breakpoint) === parseInt(breakpoint, 10)
 			);
 
 			matchMedia.addEventListener("change", () =>

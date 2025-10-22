@@ -18,192 +18,43 @@
 	font-weight: 300 !important;
 }
 
+.italic {
+	font-style: italic !important;
+}
+
 h1,
 .h1 {
 	font-weight: 700;
-	line-height: 120%;
-
-	font-size: size(52, 42, 1920, 1280);
-
-	@include minw1920 {
-		font-size: max(52rem, 52px);
-	}
-
-	@include mw1240 {
-		font-size: rem(42);
-		font-size: size(42, 34, 1240, 764);
-	}
-
-	@include mw760 {
-		font-size: size(34, 28, 760, 360);
-	}
+	font-size: rem(24);
+	line-height: 110%;
 }
 
 h2,
 .h2 {
-	font-weight: 400;
-	line-height: 116%;
-	font-size: size(32, 24, 1920, 1280);
-
-	@include minw1920 {
-		font-size: max(40rem, 40px);
-	}
-
-	@include mw1240 {
-		font-size: size(24, 28, 1240, 767);
-		font-size: rem(24);
-	}
-
-	@include mw760 {
-		font-size: size(28, 24, 760, 360);
-		line-height: 116%;
-	}
+	font-weight: 700;
+	font-size: rem(22);
+	line-height: 110%;
 }
 
 h3,
 .h3 {
 	font-weight: 700;
-	line-height: 116%;
-	font-size: size(32, 28, 1920, 1280);
-
-	@include minw1920 {
-		font-size: max(32rem, 32px);
-	}
-
-	@include mw1240 {
-		font-size: size(28, 24, 1240, 767);
-	}
-
-	@include mw760 {
-		font-size: size(24, 20, 760, 360);
-	}
+	font-size: rem(20);
+	line-height: 110%;
 }
 
 h4,
 .h4 {
-	font-weight: 700;
-	line-height: 116%;
-	font-size: size(24, 20, 1920, 1280);
-
-	@include minw1920 {
-		font-size: max(24rem, 24px);
-	}
-
-	@include mw760 {
-		font-size: rem(20);
-		font-size: size(20, 16, 760, 360);
-	}
-}
-
-
-a,
-button,
-.btn,
-.component-btn,
-.fz-16 {
+	font-family: 'Montserrat';
+	font-style: normal;
 	font-weight: 700;
 	font-size: rem(16);
-	line-height: 120%;
-	font-size: size(16, 14, 1920, 767);
-
-	@include minw1920 {
-		font-size: max(16rem, 16px);
-	}
-
-	@include mw767 {
-		line-height: 116%;
-	}
+	line-height: 110%;
 }
 
-.p1,
-.p1 p,
-.p1 li {
-	font-weight: 400;
-	line-height: 140%;
-	font-size: size(20, 18, 1920, 1280);
-
-	@include minw1920 {
-		font-size: max(20rem, 20px);
-	}
-
-
-	@include mw992 {
-		line-height: 116%;
-	}
-
-	@include mw760 {
-		font-size: size(18, 16, 760, 360);
-	}
-}
-
-.p2,
-.p2 p,
-.p2 li {
-	font-weight: 400;
-	line-height: 140%;
-	font-size: size(18, 16, 1920, 1280);
-
-	@include minw1920 {
-		font-size: max(18rem, 18px);
-	}
-
-	@include mw767 {
-		line-height: 116%;
-	}
-
-	@include mw760 {
-		font-size: size(16, 14, 760, 360);
-	}
-}
-
-input,
 p,
-.p3,
-.p3 p,
-.p3 li {
-	font-weight: 400;
-	line-height: 140%;
-	font-size: size(18, 16, 1920, 1280);
-
-	@include minw1920 {
-		font-size: max(18rem, 18px);
-	}
-
-	@include mw992 {
-		line-height: 116%;
-	}
-
-	@include mw760 {
-		font-size: size(16, 14, 1240, 767);
-	}
-}
-
-
-.p4,
-.p4 p,
-.p4 li,
-.link,
-.link a {
-	font-weight: 400;
-	line-height: 116%;
-	font-size: size(16, 14, 1920, 1280);
-
-	@include minw1920 {
-		font-size: max(16rem, 16px);
-	}
-
-	@include mw760 {
-		font-size: rem(12);
-		font-size: size(14, 12, 760, 360);
-	}
-}
-
-.p5 {
+.text {
 	font-weight: 400;
 	font-size: rem(14);
-	line-height: 116%;
-
-	@include minw1920 {
-		font-size: max(14rem, 14px);
-	}
+	line-height: 110%;
 }

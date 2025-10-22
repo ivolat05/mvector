@@ -1,0 +1,44 @@
+.search {
+	position: relative;
+	width: 100%;
+
+	input {
+		width: 100%;
+		height: rem(35);
+		background: var(--color-light-gray);
+		border-radius: 100px;
+		padding: rem(6) rem(40) rem(6) rem(15);
+		border: none;
+		outline: none;
+
+
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: rem(12);
+		line-height: 110%;
+		color: var(--color-black);
+
+		&::placeholder {
+			font-family: 'Montserrat';
+			font-style: italic;
+			font-weight: 400;
+			font-size: rem(12);
+			line-height: 110%;
+			color: var(--color-border);
+		}
+	}
+
+	&__btn {
+		@include imgBox(rem(35), rem(35), rem(20), rem(20));
+		@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+		z-index: var(--z-index-1);
+		background: var(--color-primary);
+		border-radius: 50%;
+
+	}
+}

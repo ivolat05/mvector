@@ -2,10 +2,7 @@
 @import "./layout.scss";
 
 html {
-	@include minw1920 {
-		--w: 1920;
-		font-size: calc(100vw / var(--w));
-	}
+
 
 	overflow-x: hidden;
 	overflow-y: scroll;
@@ -26,21 +23,21 @@ body {
 	font-family: var(--font-primary);
 
 	&::-webkit-scrollbar-thumb {
-		@include scrollStyle(var(--blue));
+		@include scrollStyle(var(--color-primary));
 	}
 
 	&::-webkit-scrollbar {
-		@include scrollStyle(var(--blue-05));
+		@include scrollStyle(var(--color-gray-light));
 	}
 }
 
 * {
 	&::-webkit-scrollbar-thumb {
-		@include scrollStyle(var(--blue));
+		@include scrollStyle(var(--color-primary));
 	}
 
 	&::-webkit-scrollbar {
-		@include scrollStyle(var(--blue-05));
+		@include scrollStyle(var(--color-gray-light));
 	}
 }
 
@@ -105,7 +102,7 @@ time {
 
 .page {
 	display: flex;
-	min-height: 100vh;
+	min-height: 100dvh;
 	flex-direction: column;
 
 	overflow: hidden;
@@ -115,23 +112,13 @@ time {
 
 	margin-inline: auto;
 	width: 100%;
+	max-width: rem(1240);
+	padding-left: rem(10);
+	padding-right: rem(10);
+}
 
-	padding-left: size(120, 80, 1919.99, 1280);
-	padding-right: size(120, 80, 1919.99, 1280);
-
-	@include minw1920 {
-		--pi: 120rem;
-		max-width: min(var(--maxWidthContainer), 100% - var(--pi) * 2);
-	}
-
-
-	@include mw1240 {
-		padding-left: size(80, 40, 1240, 767);
-		padding-right: size(80, 40, 1240, 767);
-	}
-
-	@include mw767 {
-		padding-left: size(40, 20, 760, 360);
-		padding-right: size(40, 20, 760, 360);
+.--is-fixed {
+	@include mw992 {
+		overflow: hidden;
 	}
 }

@@ -3,7 +3,6 @@
 
 // Подключение сторонних библиотек
 @import "../scss/vendor/swiper-bundle.min.scss";
-@import "../scss/vendor/tippy.scss";
 
 // Функции и миксины
 @import "../scss/utils/functions.scss";
@@ -21,5 +20,4 @@
 @import "../components/components.scss";
 
 // Стили для конкретных разделов
-@import "../scss/path/publick.scss";
-@import "../scss/path/cabinet.scss";
+@import "../scss/pages/index/maps.scss";
