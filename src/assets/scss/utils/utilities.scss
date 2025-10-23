@@ -100,12 +100,24 @@ time {
 	display: block;
 }
 
+picture {
+	display: contents;
+}
+
 .page {
 	display: flex;
 	min-height: 100dvh;
 	flex-direction: column;
 
 	overflow: hidden;
+}
+
+.page-padding-top {
+	padding-top: rem(110);
+
+	@include mw992 {
+		padding-top: rem(82);
+	}
 }
 
 .container {
@@ -120,5 +132,14 @@ time {
 .--is-fixed {
 	@include mw992 {
 		overflow: hidden;
+	}
+}
+
+.section {
+	&-title {
+		font-weight: 700;
+		text-align: center;
+		text-transform: uppercase;
+		color: var(--color-primary);
 	}
 }

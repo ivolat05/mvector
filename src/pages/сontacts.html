@@ -6,10 +6,115 @@
 )
 
 <body>
-	<div class="page">
-		@@include("../assets/components/header/header.html" )
-		<main>
-			Контакты
+	<div class="page page-padding-top">
+		@@include("../assets/components/header/header-contacts.html" )
+		<main class="contacts">
+			<ul class="breadcrumb container">
+				<li>
+					<a href="#" target="_blank" aria-label="Главная">
+						Главная
+					</a>
+				</li>
+				<li>
+					Контакты
+				</li>
+			</ul>
+			<div class="container contacts__container">
+
+				<h1 class="contacts-title section-title ">
+					Контакты
+				</h1>
+				<div class="contacts__wrapp">
+					<ul class="contacts__info-list">
+						<li class="contacts__info-inner flex ai-fs jc-fs">
+							<div class="contacts__info-icon">
+								<img src="assets/img/contacts/contacts-1.svg" alt="">
+							</div>
+							<div class="contacts__info-coll">
+								<div class="contacts__info-wrapp">
+									<p class="contacts__info-text h4 regular">
+										127422, г. Москва, вн.тер.г. муниципальный округ Тимирязевский, ул.
+										Тимирязевская,
+										д. 1 стр. 2, помещение ½
+									</p>
+									<a href="tel:8(499)1104704" target="_blank" class="contacts__info-link h4 regular">8
+										(499) 110-47-04</a>
+									<a href="mailto:info@medacademia.ru" target="_blank"
+										class="contacts__info-link h4 regular">info@medacademia.ru</a>
+								</div>
+
+							</div>
+						</li>
+						<li class="contacts__info-inner flex ai-fs jc-fs">
+							<div class="contacts__info-icon">
+								<img src="assets/img/contacts/contacts-2.svg" alt="">
+							</div>
+							<div class="contacts__info-coll">
+								<h3 class="contacts__info-title">
+									По вопросам технической поддержки <br> и получения баллов НМО:
+								</h3>
+								<div class="contacts__info-wrapp">
+									<a href="tel:+7(977)9561736" target="_blank" class="contacts__info-link h4 regular">
+										+7 (977) 956-17-36 (телефон, whatsapp)
+									</a>
+									<a href="mailto:info@medacademia.ru" target="_blank"
+										class="contacts__info-link h4 regular">
+										info@medacademia.ru
+									</a>
+									<div class="contacts__info-user">
+										<h4 class="contacts__info-name">
+											Смирнова Арина Алексеевна
+										</h4>
+									</div>
+								</div>
+
+							</div>
+						</li>
+						<li class="contacts__info-inner flex ai-fs jc-fs">
+							<div class="contacts__info-icon">
+								<img src="assets/img/contacts/contacts-3.svg" alt="">
+							</div>
+							<div class="contacts__info-coll">
+								<h3 class="contacts__info-title">
+									По вопросам спонсорского участия:
+								</h3>
+								<div class="contacts__info-wrapp">
+
+									<a href="tel:+79161552133" target="_blank" class="contacts__info-link h4 regular">
+										+7 (916) 155-21-33 (телефон, WhatsApp)
+									</a>
+									<a href="mailto:askom-expo@mail.ru" target="_blank"
+										class="contacts__info-link h4 regular">
+										askom-expo@mail.ru
+									</a>
+									<div class="contacts__info-user">
+										<h4 class="contacts__info-name">
+											Ивлиев Сергей Викторович
+										</h4>
+										<p class="contacts__info-text h4 regular">
+											руководитель отдела региональных конференций
+										</p>
+									</div>
+								</div>
+
+							</div>
+						</li>
+					</ul>
+					<form class="contacts__form">
+						<input class="contacts__form-input" type="text" placeholder="Имя">
+						<input class="contacts__form-input" type="email" placeholder="E-mail">
+						<textarea class="contacts__form-textarea" placeholder="Сообщение"></textarea>
+						<p class="contacts__form-text">
+							Нажимая на кнопку "Отправить", я даю  <a href="#" target="_blank">согласие</a>  ООО
+							«Медакадемия» на обработку моих
+							персональных данных в соответствии с  <a href="#" target="_blank">Политикой</a>
+						</p>
+						<button type="submit" class="contacts__form-btn btn">
+							Отправить
+						</button>
+					</form>
+				</div>
+			</div>
 		</main>
 		@@include("../assets/components/footer/footer.html")
 	</div>

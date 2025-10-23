@@ -2,17 +2,60 @@
  * Инициализация Swiper с адаптацией под rem
  */
 
-const swiperPopular = document.querySelector(".popular__swiper");
-const installSwiperPopular = {
+const swiperNearest = document.querySelector(".nearest__swiper");
+const installSwiperNearest = {
 	slidesPerView: 4,
-	spaceBetween: pxToSwiper(24),
+	loop: true,
+	spaceBetween: pxToSwiper(27),
 	breakpoints: {
-		[pxToSwiper(320)]: { slidesPerView: 1, spaceBetween: pxToSwiper(16) }, // 320px → rem → px
-		[pxToSwiper(760)]: { slidesPerView: 2, spaceBetween: pxToSwiper(16) }, // 768px → rem → px
-		[pxToSwiper(1140)]: { slidesPerView: 3, spaceBetween: pxToSwiper(12) },
-		[pxToSwiper(1560)]: { slidesPerView: 4, spaceBetween: pxToSwiper(24) }, // 1024px → rem → px
+		[pxToSwiper(319.99)]: {
+			slidesPerView: 1,
+			spaceBetween: pxToSwiper(27),
+		},
+		[pxToSwiper(572.99)]: { slidesPerView: 2 },
+		[pxToSwiper(820.99)]: {
+			slidesPerView: 3,
+		},
+		[pxToSwiper(1100.99)]: {
+			slidesPerView: 4,
+			spaceBetween: pxToSwiper(27),
+		},
+	},
+	navigation: {
+		nextEl: ".nearest-button-next",
+		prevEl: ".nearest-button-prev",
 	},
 };
+
+const swiperReview = document.querySelector(".review__swiper");
+const installSwiperReview = {
+	slidesPerView: 2,
+	loop: true,
+	spaceBetween: pxToSwiper(40),
+	breakpoints: {
+		[pxToSwiper(319.99)]: {
+			slidesPerView: 1,
+			spaceBetween: pxToSwiper(20),
+		},
+		[pxToSwiper(572.99)]: {
+			slidesPerView: 2,
+			spaceBetween: pxToSwiper(20),
+		},
+		[pxToSwiper(992.99)]: {
+			slidesPerView: 2,
+			spaceBetween: pxToSwiper(30),
+		},
+		[pxToSwiper(1100.99)]: {
+			slidesPerView: 2,
+			spaceBetween: pxToSwiper(40),
+		},
+	},
+	navigation: {
+		nextEl: ".review-button-next",
+		prevEl: ".review-button-prev",
+	},
+};
+
 function initSwiper(swiper, installSwiper) {
 	try {
 		new Swiper(swiper, installSwiper);
@@ -23,5 +66,6 @@ function initSwiper(swiper, installSwiper) {
 
 // Запускаем Swiper после загрузки DOM
 document.addEventListener("DOMContentLoaded", () => {
-	initSwiper(swiperPopular, installSwiperPopular);
+	initSwiper(swiperNearest, installSwiperNearest);
+	initSwiper(swiperReview, installSwiperReview);
 });

@@ -6,10 +6,20 @@
 )
 
 <body>
-	<div class="page">
-		@@include("../assets/components/header/header.html" )
+	<div class="page page-padding-top">
+		@@include("../assets/components/header/header-events.html" )
 		<main>
-			Mероприятия
+			<ul class="breadcrumb container">
+				<li>
+					<a href="#" target="_blank" aria-label="Главная">
+						Главная
+					</a>
+				</li>
+				<li>
+					Мероприятия
+				</li>
+			</ul>
+			@@include("../html/page/events/events__wrapp.html" )
 		</main>
 		@@include("../assets/components/footer/footer.html")
 	</div>

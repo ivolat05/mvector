@@ -244,6 +244,10 @@
 				color: var(--color-primary);
 				@include interactive-states(color, var(--color-dark), var(--color-accent), var(--color-accent));
 
+				&.-is-active {
+					color: var(--color-accent);
+				}
+
 				@include mw992 {
 					font-size: rem(14);
 				}

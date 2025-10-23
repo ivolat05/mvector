@@ -1,0 +1,48 @@
+.nearest {
+	padding-top: rem(97);
+	padding-bottom: rem(53);
+	background: var(--color-background);
+
+	@include mw992 {
+		padding-top: rem(70);
+	}
+
+	&__swiper {
+		padding-top: rem(34);
+
+		&-slide {
+			height: auto;
+
+			opacity: 0;
+			pointer-events: none;
+
+			&.swiper-slide-active,
+			&.swiper-slide-active+&,
+			&.swiper-slide-active+&+&,
+			&.swiper-slide-active+&+&+& {
+				opacity: 1;
+				pointer-events: auto;
+			}
+		}
+
+		&-btn {
+			&.swiper-button-disabled {
+				display: none;
+			}
+		}
+
+		&-controll {
+			padding-top: rem(33);
+			gap: rem(45);
+
+			@include mw992 {
+				gap: rem(10);
+			}
+		}
+	}
+
+	&__btn {
+		min-width: rem(200);
+		font-size: rem(16);
+	}
+}

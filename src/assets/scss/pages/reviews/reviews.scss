@@ -1,0 +1,99 @@
+.reviews {
+	padding-bottom: rem(97);
+
+	@include mw992 {
+		padding-bottom: rem(89);
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: rem(33);
+	}
+
+	&__new-btn,
+	&__btn {
+		margin-left: auto;
+		margin-right: auto;
+		min-width: rem(200);
+		font-size: rem(16);
+	}
+
+	&__wrapp {
+		display: flex;
+		flex-direction: column;
+		gap: rem(33);
+	}
+
+	&__box {
+		min-height: rem(238);
+		display: flex;
+		flex-direction: column;
+		background: url("../../assets/img/rev-back.svg") no-repeat left rem(19) top rem(12) /contain, var(--color-white);
+		box-shadow: var(--shadow-dark-ultra-55);
+		background-size: rem(283) rem(161);
+		border: rem(1) solid var(--color-primary);
+		padding: rem(35) rem(30) rem(30) rem(30);
+		gap: rem(30);
+
+		@include mw992 {
+			min-height: rem(371);
+			padding: rem(35) rem(20) rem(16) rem(20);
+		}
+
+		&-text {
+			line-height: 121%;
+		}
+
+		&-footer {
+			margin-top: auto;
+			margin-bottom: 0;
+			display: grid;
+			grid-template-columns: rem(90) 1fr;
+			gap: rem(12);
+			align-items: flex-start;
+			max-width: rem(530);
+
+			@include mw992 {
+				grid-template-columns: rem(85) 1fr;
+				gap: rem(12);
+			}
+		}
+
+		&-left {
+			min-height: rem(56);
+			border-right: rem(1) solid var(--color-accent);
+			display: flex;
+			flex-direction: column;
+			gap: rem(10);
+		}
+
+		&-right {
+			display: flex;
+			flex-direction: column;
+			gap: rem(10);
+		}
+
+		&-title {
+			color: var(--color-primary);
+		}
+
+		&-time {
+			color: var(--color-accent);
+
+			@include mw992 {
+				margin-top: auto;
+				margin-bottom: 0;
+			}
+		}
+
+		&-name {
+			color: var(--color-primary);
+		}
+
+		&-project {
+			color: var(--color-accent);
+		}
+	}
+
+}

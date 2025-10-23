@@ -1,0 +1,52 @@
+.breadcrumb {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+
+	flex-wrap: wrap;
+	gap: rem(9) 0;
+
+	padding-bottom: rem(27);
+
+	@include mw992 {
+		padding-left: rem(20);
+	}
+
+	li {
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: rem(12);
+		line-height: rem(15);
+		color: var(--color-border);
+
+		&::after {
+			content: ">";
+			padding-left: rem(5);
+			padding-right: rem(5);
+			font-family: 'Montserrat';
+			font-style: normal;
+			font-weight: 400;
+			font-size: rem(12);
+			line-height: rem(15);
+			color: var(--color-border);
+		}
+
+		&:nth-last-child(1) {
+			&::after {
+				content: "";
+				padding: 0;
+			}
+		}
+
+		a {
+			font-family: inherit;
+			font-style: inherit;
+			font-weight: inherit;
+			font-size: inherit;
+			line-height: inherit;
+			color: inherit;
+			@include interactive-states(color, var(--color-dark), var(--color-accent), var(--color-accent));
+		}
+	}
+}

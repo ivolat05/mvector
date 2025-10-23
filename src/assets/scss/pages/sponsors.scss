@@ -1,0 +1,164 @@
+.sponsors {
+	padding-bottom: rem(74);
+
+	&__wrapp {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: rem(13) rem(40);
+		padding-top: rem(33);
+
+		@include mw992 {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&-list {
+			display: flex;
+			flex-direction: column;
+			gap: rem(13);
+		}
+	}
+
+	&__accordion {
+		width: 100%;
+
+		@include mw992 {
+			width: 100%;
+		}
+
+		&-btn {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+			background: var(--color-primary);
+			padding: rem(9) rem(15);
+			gap: rem(15);
+			font-family: 'Montserrat';
+			font-style: normal;
+			font-weight: 700;
+			font-size: rem(16);
+			line-height: rem(20);
+			color: var(--color-white);
+			text-align: left;
+
+			&.is-active {
+				.button-arrow {
+					transform: rotate(180deg);
+				}
+			}
+
+			@media (hover: hover) {
+				&:hover {
+					.button-arrow {
+						background: var(--color-dark);
+					}
+				}
+			}
+
+			&:focus-visible {
+				.button-arrow {
+					background: var(--color-accent);
+				}
+			}
+
+			&:active {
+				.button-arrow {
+					background: var(--color-accent);
+				}
+			}
+		}
+
+		&-inner {
+			padding: rem(7) rem(12);
+
+			font-family: 'Montserrat';
+			font-style: normal;
+			font-weight: 400;
+			font-size: rem(12);
+			line-height: rem(15);
+
+			color: var(--color-black);
+
+			&:nth-child(even) {
+				background: var(--color-primary-opacity-15);
+			}
+		}
+	}
+
+	&__request {
+		padding-top: rem(43);
+		padding-bottom: rem(21);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: rem(21);
+
+		&-btn {
+			height: auto;
+			min-height: rem(40);
+			padding-top: rem(10);
+			padding-bottom: rem(10);
+			text-align: center;
+			font-size: rem(16);
+			padding-left: rem(20);
+			padding-right: rem(20);
+		}
+
+		&-text {
+			text-align: center;
+			color: var(--color-primary);
+		}
+	}
+
+	&__discounts {
+		background: var(--color-primary-opacity-6);
+		padding: rem(26) rem(20) rem(30) rem(20);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: rem(14);
+
+		&-list {
+			max-width: rem(776);
+			width: 100%;
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-evenly;
+			flex-wrap: wrap;
+			gap: rem(30);
+
+			@include mw466 {
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+
+		&-inner {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: rem(5);
+		}
+
+		&-number {
+			font-family: 'Montserrat';
+			font-style: normal;
+			font-weight: 700;
+			font-size: rem(38);
+			line-height: rem(46);
+			text-align: center;
+			color: var(--color-primary);
+		}
+
+		&-name {
+			text-align: center;
+			color: var(--color-primary);
+		}
+	}
+}

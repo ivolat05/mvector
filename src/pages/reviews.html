@@ -6,10 +6,20 @@
 )
 
 <body>
-	<div class="page">
-		@@include("../assets/components/header/header.html" )
-		<main>
-			Отзывы
+	<div class="page page-padding-top" style="background: var(--color-background);">
+		@@include("../assets/components/header/header-reviews.html" )
+		<ul class="breadcrumb container">
+			<li>
+				<a href="#" target="_blank" aria-label="Главная">
+					Главная
+				</a>
+			</li>
+			<li>
+				Отзывы
+			</li>
+		</ul>
+		<main class="reviews">
+			@@include("../html/page/reviews/reviews.html" )
 		</main>
 		@@include("../assets/components/footer/footer.html")
 	</div>

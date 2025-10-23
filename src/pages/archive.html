@@ -6,10 +6,24 @@
 )
 
 <body>
-	<div class="page">
-		@@include("../assets/components/header/header.html" )
-		<main>
-
+	<div class="page page-padding-top">
+		@@include("../assets/components/header/header-archive.html" )
+		<ul class="breadcrumb container">
+			<li>
+				<a href="#" target="_blank" aria-label="Главная">
+					Главная
+				</a>
+			</li>
+			<li>
+				Архив мероприятий
+			</li>
+		</ul>
+		<main class="arhive">
+			<h1 class="arhive-title section-title">
+				Архив Мероприятий
+			</h1>
+			@@include("../html/page/arhive/arhive__fillter.html" )
+			@@include("../html/page/arhive/arhive__table.html" )
 		</main>
 		@@include("../assets/components/footer/footer.html")
 	</div>

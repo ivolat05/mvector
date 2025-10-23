@@ -9,7 +9,8 @@
 --include("scripts/htmlRootUnlock.js");
 --include('scripts/dynamic-adaptive-compenents.js')
 --include('scripts/maps-tab.js')
-
+--include('scripts/swipers/swiper.js')
+--include('scripts/scroll-top.js')
 
 // Подключение к
 --include('../components/components.js')

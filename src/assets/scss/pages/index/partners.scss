@@ -1,0 +1,32 @@
+.partners {
+	padding-top: rem(50);
+	padding-bottom: rem(83);
+
+	@include mw992 {
+		padding-bottom: rem(74);
+	}
+
+	&__wrapp {
+		padding-top: rem(35);
+		gap: rem(40) rem(20);
+
+		@include mw992 {
+			padding-top: rem(26);
+		}
+	}
+
+	&__img {
+		height: rem(75);
+
+		&-fix {
+			height: rem(88);
+		}
+
+		img,
+		svg {
+			width: auto;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+}

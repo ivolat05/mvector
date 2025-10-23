@@ -1,0 +1,74 @@
+.review {
+	padding-top: rem(40);
+	padding-bottom: rem(50);
+	background: var(--color-background);
+
+	@include mw992 {
+		padding-bottom: rem(46);
+	}
+
+	&__swiper {
+		padding-top: rem(33);
+
+		@include mw992 {
+			padding-top: rem(36);
+		}
+
+		&-slide {
+			pointer-events: none;
+			opacity: 0;
+
+			&.swiper-slide-active,
+			&.swiper-slide-active+& {
+				opacity: 1;
+				pointer-events: auto;
+			}
+		}
+	}
+
+	&__box.reviews__box {
+		min-height: rem(300);
+		height: auto;
+
+		@include mw992 {
+			min-height: rem(371);
+		}
+	}
+
+	&__controll {
+		display: grid;
+		grid-template-columns: rem(200) 1fr rem(200);
+		padding-top: rem(32);
+
+		@include mw992 {
+			display: flex;
+			flex-direction: column;
+			gap: rem(18);
+		}
+
+		&-wrapp {
+			grid-column: 2/3;
+			gap: rem(45);
+
+			@include mw992 {
+				gap: rem(10);
+			}
+		}
+
+		&-btn {
+			min-width: rem(200);
+			font-size: rem(16);
+
+		}
+	}
+
+	&__new-btn {
+		width: fit-content;
+		min-width: rem(200);
+		font-size: rem(16);
+		padding-left: rem(5);
+		padding-right: rem(5);
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

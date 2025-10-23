@@ -1,5 +1,5 @@
 .maps {
-
+	background: var(--color-background);
 	margin-top: rem(75);
 
 	@include mw992 {
@@ -375,6 +375,7 @@
 
 	&__fillter {
 		padding-top: rem(30);
+		background: var(--color-background);
 
 		@include mw992 {
 			display: none;
@@ -477,6 +478,7 @@
 	&__mobile {
 		padding-top: rem(20);
 		display: none;
+		background: var(--color-background);
 
 		@include mw992 {
 			display: block;

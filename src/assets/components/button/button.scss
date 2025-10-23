@@ -25,7 +25,7 @@
 .btn-br {
 	@include interactive-states(border-color, var(--color-dark), var(--color-accent), var(--color-accent));
 	@include interactive-states(color, var(--color-dark), var(--color-accent), var(--color-accent));
-	@include interactive-states(fill, var(--color-dark), var(--color-accent), var(--color-accent));
+	@include interactive-states(stroke, var(--color-dark), var(--color-accent), var(--color-accent));
 
 	border-radius: 50%;
 	height: rem(40);
@@ -45,7 +45,55 @@
 	line-height: 100%;
 	color: var(--color-primary);
 	border: rem(1) solid var(--color-primary);
+	stroke: var(--color-primary);
+
+}
+
+.btn-arrow {
+	@include imgBox(rem(40), rem(40), 60%, 60%);
 	fill: var(--color-primary);
+	@include interactive-states(fill, var(--color-dark), var(--color-accent), var(--color-accent));
+	border-radius: 50%;
+}
 
+.button-arrow {
+	@include imgBox(rem(28), rem(28), 60%, 60%);
+	@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+	background: var(--color-primary);
+	border-radius: 50%;
+	border: rem(1) solid var(--color-white);
+	box-shadow: var(--shadow-black);
+	padding-top: rem(3);
+}
 
+.button-scroll {
+	@include imgBox(rem(68), rem(68), 60%, 60%);
+	@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+	background: var(--color-primary);
+	border-radius: 50%;
+	border: rem(1) solid var(--color-white);
+	box-shadow: var(--shadow-black);
+	padding-top: rem(3);
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translate(-50%, -50%);
+}
+
+.btn-swiper {
+	@include imgBox(rem(40), rem(40), 55%, 55%);
+	@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+	background: var(--color-primary);
+	border-radius: 50%;
+}
+
+.link {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: rem(14);
+	line-height: rem(20);
+	text-decoration-line: underline;
+	color: var(--color-primary);
+	@include interactive-states(color, var(--color-dark), var(--color-accent), var(--color-accent));
 }

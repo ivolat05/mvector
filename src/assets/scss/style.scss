@@ -20,4 +20,21 @@
 @import "../components/components.scss";
 
 // Стили для конкретных разделов
+// index
 @import "../scss/pages/index/maps.scss";
+@import "../scss/pages/index/nearest.scss";
+@import "../scss/pages/index/advant.scss";
+@import "../scss/pages/index/news.scss";
+@import "../scss/pages/index/review.scss";
+@import "../scss/pages/index/partners.scss";
+// events
+@import "../scss/pages/events/events.scss";
+// reviews
+@import "../scss/pages/reviews/reviews.scss";
+
+// contacts
+@import "../scss/pages/contacts.scss";
+// sponsors
+@import "../scss/pages/sponsors.scss";
+// arhive
+@import "../scss/pages/arhive.scss";
