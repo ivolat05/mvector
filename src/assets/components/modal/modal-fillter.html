@@ -1,0 +1,51 @@
+<!-- для вызова модального окна необходиом передать атрибут  data-open-modal в котором необходимо  указать id модального окна -->
+
+<div id="modal-fillter" class="modal-background --active">
+	<div class="modal__container ">
+		<div class="modal__header flex ai-c jc-sb">
+			<h3 class="modal__header-title">
+				Город
+			</h3>
+			<button type="button" class="modal-btn btn__modal--close">
+				<svg width="16" height="16" viewBox="0 0 16 16">
+					<use xlink:href="assets/img/sprite.svg#close"></use>
+				</svg>
+			</button>
+		</div>
+		<div class="">
+			<!--data-select-rezet помещаеться плесхолдер-->
+			<div class="select" data-select-rezet="">
+				<div class="select__header  ">
+					<input class="select__hidden-input" type="hidden" value="Все категории">
+					<!--если плесхолдер не нужен нужно добавить класс selected-->
+					<span class="select__current   ">
+						Все категории
+					</span>
+					<svg class="select-arrow" width="16" height="10" viewBox="0 0 16 10" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M0.999283 1L7.7168 7.71751L14.4343 1" stroke="#C0C0C0" stroke-width="2"
+							stroke-linecap="round" />
+					</svg>
+				</div>
+				<div class="select__body ">
+					<button type="button" class="select__item">
+						Последние
+					</button>
+				</div>
+			</div>
+
+
+
+		</div>
+
+		<div class="modal__footer">
+			<button type="button" class="modal__footer-btn btn-br  rezet-btn">
+				Сбросить
+			</button>
+			<button class="modal__footer-btn btn btn__modal--close">
+				Применить
+			</button>
+		</div>
+
+	</div>
+</div>

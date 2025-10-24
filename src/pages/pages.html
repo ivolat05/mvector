@@ -8,23 +8,28 @@
 <body>
 	<div class="page page-padding-top">
 		@@include("../assets/components/header/header.html" )
-		<main>
-			<ul class="breadcrumb container">
-				<li>
-					<a href="#" target="_blank" aria-label="Главная">
-						Главная
-					</a>
-				</li>
-				<li>
-					<a href="#" target="_blank" aria-label="Главная">
-						Мероприятия
-					</a>
-				</li>
-				<li>
-					ХII МЕЖДИСЦИПЛИНАРНЫЙ МЕДИЦИНСКИЙ КОНГРЕСС «Актуальные вопросы врачебной практики»
-				</li>
-			</ul>
-			Страница
+		<ul class="breadcrumb container">
+			<li>
+				<a href="#" target="_blank" aria-label="Главная">
+					Главная
+				</a>
+			</li>
+			<li>
+				<a href="#" target="_blank" aria-label="Главная">
+					Мероприятия
+				</a>
+			</li>
+			<li>
+				ХII МЕЖДИСЦИПЛИНАРНЫЙ МЕДИЦИНСКИЙ КОНГРЕСС «Актуальные вопросы врачебной практики»
+			</li>
+		</ul>
+		<main class="pages">
+			@@include("../html/page/pages/info.html" )
+			@@include("../html/page/pages/organizers.html" )
+			@@include("../html/page/pages/participation.html" )
+			@@include("../html/page/pages/chapter.html" )
+			@@include("../html/page/pages/document.html" )
+			@@include("../html/page/pages/pairs.html" )
 		</main>
 		@@include("../assets/components/footer/footer.html")
 	</div>

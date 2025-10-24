@@ -1,0 +1,27 @@
+.pairs {
+	padding-top: rem(41);
+
+	&-title {
+		text-transform: uppercase;
+		color: var(--color-primary);
+	}
+
+	&__wrapp {
+		padding-top: rem(22);
+		padding-bottom: rem(55);
+		gap: rem(20) rem(30);
+		border-bottom: rem(1) solid var(--color-primary);
+	}
+
+	&__img {
+		height: rem(45);
+
+		img,
+		svg {
+			height: 100%;
+			width: auto;
+			object-fit: contain;
+		}
+	}
+
+}

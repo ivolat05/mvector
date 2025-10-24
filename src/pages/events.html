@@ -8,20 +8,31 @@
 <body>
 	<div class="page page-padding-top">
 		@@include("../assets/components/header/header-events.html" )
-		<main>
-			<ul class="breadcrumb container">
-				<li>
-					<a href="#" target="_blank" aria-label="Главная">
-						Главная
-					</a>
-				</li>
-				<li>
-					Мероприятия
-				</li>
-			</ul>
-			@@include("../html/page/events/events__wrapp.html" )
+		<ul class="breadcrumb container">
+			<li>
+				<a href="#" target="_blank" aria-label="Главная">
+					Главная
+				</a>
+			</li>
+			<li>
+				Мероприятия
+			</li>
+		</ul>
+		<main class="events">
+			<div class="container">
+				<h1 class="events-title section-title">
+					Мероприятия (н1)
+				</h1>
+				@@include("../html/page/events/events__fillter.html" )
+				@@include("../html/page/events/events__wrapp.html" )
+				<button type="button" class="events__more-btn btn">
+					Еще
+				</button>
+			</div>
+
 		</main>
 		@@include("../assets/components/footer/footer.html")
+		@@include("../assets/components/modal/modal-fillter.html")
 	</div>
 
 	<script src="../assets/js/app.min.js"></script>

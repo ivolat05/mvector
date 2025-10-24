@@ -1,0 +1,50 @@
+.arhive {
+	padding-bottom: rem(80);
+
+	&__table {
+		padding-top: rem(36);
+		overflow: auto;
+
+		&-wrapp {
+			min-width: rem(1030);
+		}
+
+		&-row {
+			display: grid;
+			align-items: center;
+			grid-template-columns: rem(150) 1fr rem(176) rem(203) rem(91);
+			gap: rem(15);
+			padding-top: rem(17);
+			padding-bottom: rem(17);
+			border-bottom: rem(1) solid var(--color-gray-light);
+		}
+
+		&-header-row {
+			padding-top: 0;
+			border-color: var(--color-primary);
+		}
+
+		&-header-coll {
+			font-family: 'Montserrat';
+			font-style: normal;
+			font-weight: 700;
+			font-size: rem(14);
+			line-height: rem(17);
+
+			color: var(--color-primary);
+		}
+
+		&-coll {
+			font-family: 'Montserrat';
+			font-style: normal;
+			font-weight: 400;
+			font-size: rem(12);
+			line-height: rem(15);
+			color: var(--color-black);
+		}
+
+		&-link {
+			font-weight: 400;
+		}
+	}
+}

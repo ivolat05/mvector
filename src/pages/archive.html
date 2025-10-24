@@ -22,12 +22,15 @@
 			<h1 class="arhive-title section-title">
 				Архив Мероприятий
 			</h1>
-			@@include("../html/page/arhive/arhive__fillter.html" )
-			@@include("../html/page/arhive/arhive__table.html" )
+			<div class="container arhive__container">
+				@@include("../html/page/events/events__fillter.html" )
+				@@include("../html/page/arhive/arhive__table.html" )
+			</div>
+
 		</main>
 		@@include("../assets/components/footer/footer.html")
 	</div>
-
+	@@include("../assets/components/modal/modal-fillter.html")
 	<script src="../assets/js/app.min.js"></script>
 </body>
 

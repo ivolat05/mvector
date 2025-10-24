@@ -1,4 +1,10 @@
 .events {
+	padding-bottom: rem(237);
+
+	@include mw992 {
+		padding-bottom: rem(116);
+	}
+
 	&__wrapp {
 		padding-top: rem(45);
 		display: grid;
@@ -73,6 +79,31 @@
 				height: rem(17);
 				flex-shrink: 0;
 				object-fit: contain;
+			}
+		}
+	}
+
+	&__more-btn {
+		margin-top: 32px;
+		margin-left: auto;
+		margin-right: auto;
+		width: rem(200);
+		font-size: rem(16);
+	}
+
+	&__fillter {
+
+		&-mob {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: rem(20);
+			padding-top: rem(30);
+
+			&-btn {
+				width: 100%;
+				height: rem(35);
+				font-size: rem(16);
+				border-radius: 0;
 			}
 		}
 	}

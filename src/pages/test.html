@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Календарь мероприятий</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 20px;
+			background: #f9f9f9;
+		}
+
+		.calendar-wrapper {
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+
+		/* Навигация */
+		.nav-controls {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			padding: 10px;
+			background: #1976d2;
+			color: white;
+			border-radius: 8px 8px 0 0;
+			justify-content: space-between;
+		}
+
+		.nav-btn {
+			background: rgba(255, 255, 255, 0.2);
+			border: none;
+			padding: 6px 12px;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 18px;
+			color: white;
+		}
+
+		.nav-btn:hover {
+			background: rgba(255, 255, 255, 0.3);
+		}
+
+		/* Дни недели (десктоп) */
+		.weekdays-header {
+			display: flex;
+			gap: 8px;
+			padding: 0 0 8px 0;
+			font-size: 12px;
+			color: #666;
+			font-weight: bold;
+		}
+
+		.weekdays-header span {
+			width: 36px;
+			text-align: center;
+		}
+
+		/* Горизонтальный календарь */
+		.horizontal-calendar {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			padding: 10px 0;
+			background: white;
+			border-radius: 0 0 8px 8px;
+			overflow-x: auto;
+		}
+
+		.day-cell {
+			width: 36px;
+			height: 36px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			cursor: pointer;
+			font-weight: bold;
+			transition: all 0.2s ease;
+			position: relative;
+			color: #333;
+		}
+
+		.day-cell:hover {
+			background: #e0e0e0;
+		}
+
+		.day-cell.has-event::after {
+			content: "";
+			position: absolute;
+			bottom: 2px;
+			right: 2px;
+			width: 6px;
+			height: 6px;
+			background: #ff5722;
+			border-radius: 50%;
+		}
+
+		/* Выходные — красные */
+		.day-cell.weekend,
+		.mobile-calendar td.weekend {
+			color: #d32f2f !important;
+		}
+
+		/* Мобильный календарь */
+		.mobile-calendar {
+			display: none;
+			background: white;
+			border-radius: 0 0 8px 8px;
+			overflow: hidden;
+		}
+
+		.mobile-calendar table {
+			width: 100%;
+			border-collapse: collapse;
+			text-align: center;
+		}
+
+		.mobile-calendar th {
+			background: #f0f0f0;
+			padding: 8px;
+			font-weight: normal;
+			font-size: 14px;
+			color: #555;
+		}
+
+		.mobile-calendar td {
+			padding: 10px;
+			cursor: pointer;
+			position: relative;
+		}
+
+		.mobile-calendar td:hover {
+			background: #f5f5f5;
+		}
+
+		.mobile-calendar .has-event::after {
+			content: "";
+			position: absolute;
+			bottom: 2px;
+			right: 2px;
+			width: 6px;
+			height: 6px;
+			background: #ff5722;
+			border-radius: 50%;
+		}
+
+		/* Popover */
+		.event-popover {
+			position: absolute;
+			background: white;
+			border: 1px solid #ddd;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+			border-radius: 8px;
+			padding: 16px 16px 16px 16px;
+			z-index: 1000;
+			max-width: 300px;
+			display: none;
+			font-size: 14px;
+			line-height: 1.5;
+		}
+
+		.event-popover h4 {
+			margin: 0 0 8px;
+			font-size: 16px;
+			color: #333;
+		}
+
+		.event-popover.weekend h4,
+		.event-popover.weekend small {
+			color: #d32f2f;
+		}
+
+		.event-popover p {
+			margin: 0 0 12px;
+			color: #555;
+		}
+
+		.event-popover small {
+			display: block;
+			color: #888;
+			font-size: 12px;
+			margin-bottom: 12px;
+		}
+
+		.btn-primary {
+			display: block;
+			width: 100%;
+			padding: 8px 12px;
+			background: #1976d2;
+			color: white;
+			text-align: center;
+			border-radius: 4px;
+			text-decoration: none;
+			font-weight: bold;
+			transition: background 0.2s;
+		}
+
+		.btn-primary:hover {
+			background: #1565c0;
+		}
+
+		/* Кнопка закрытия */
+		.btn-close {
+			position: absolute;
+			top: 8px;
+			right: 10px;
+			background: none;
+			border: none;
+			font-size: 20px;
+			cursor: pointer;
+			color: #999;
+		}
+
+		.btn-close:hover {
+			color: #333;
+		}
+
+		/* Адаптивность */
+		@media (max-width: 768px) {
+
+			.weekdays-header,
+			.horizontal-calendar {
+				display: none;
+			}
+
+			.mobile-calendar {
+				display: block;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="calendar-wrapper">
+		<div class="nav-controls">
+			<button class="nav-btn" id="prevMonth">←</button>
+			<span id="currentMonth">Сентябрь 2025</span>
+			<button class="nav-btn" id="nextMonth">→</button>
+		</div>
+
+		<!-- Дни недели (десктоп) -->
+		<div class="weekdays-header" id="weekdaysHeader"></div>
+
+		<!-- Горизонтальный календарь -->
+		<div class="horizontal-calendar" id="desktopCalendar"></div>
+
+		<!-- Мобильный календарь -->
+		<div class="mobile-calendar" id="mobileCalendar"></div>
+	</div>
+
+	<!-- Popover -->
+	<div class="event-popover" id="eventPopover">
+		<button class="btn-close">&times;</button>
+		<div class="popover__wrapp"></div>
+	</div>
+
+	<script>
+		// Данные событий
+		const events = {
+			'2025-09-03': {
+				title: 'Ялта (I мероприятие)',
+				date: '03–05 сентября 2025',
+				description: 'XII МЕЖДИСЦИПЛИНАРНЫЙ МЕДИЦИНСКИЙ КОНГРЕСС «Актуальные вопросы врачебной практики»',
+				link: 'https://www.google.com/?hl=ru'
+			},
+			'2025-09-15': {
+				title: 'Москва (II мероприятие)',
+				date: '15–17 сентября 2025',
+				description: 'XI Всероссийский медицинский форум «Ильменские встречи»',
+				link: 'https://www.google.com/?hl=ru'
+			},
+			'2025-09-05': {
+				title: 'Казань',
+				date: '05 сентября 2025',
+				description: 'Конференция по цифровому здравоохранению',
+				link: 'https://www.google.com/?hl=ru'
+			}
+		};
+
+		let currentMonth = new Date().getMonth();
+		let currentYear = new Date().getFullYear();
+
+		// === Рендер десктоп-календаря с днями недели ===
+		function renderDesktopCalendar(month, year) {
+			const container = document.getElementById('desktopCalendar');
+			const weekdaysHeader = document.getElementById('weekdaysHeader');
+			container.innerHTML = '';
+			weekdaysHeader.innerHTML = '';
+
+			const daysInMonth = new Date(year, month + 1, 0).getDate();
+			const dayNames = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+
+			for (let day = 1; day <= daysInMonth; day++) {
+				const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+				const dateObj = new Date(year, month, day);
+				const dayOfWeek = dateObj.getDay(); // 0 = вс, 1 = пн, ..., 6 = сб
+				const normalizedIndex = dayOfWeek === 0 ? 6 : dayOfWeek - 1; // пн=0, ..., вс=6
+				const weekdayName = dayNames[normalizedIndex];
+				const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+				const hasEvent = !!events[dateStr];
+
+				// День недели
+				const weekdayEl = document.createElement('span');
+				weekdayEl.textContent = weekdayName;
+				weekdaysHeader.appendChild(weekdayEl);
+
+				// Число
+				const cell = document.createElement('div');
+				cell.className = 'day-cell';
+				if (hasEvent) cell.classList.add('has-event');
+				if (isWeekend) cell.classList.add('weekend');
+				cell.textContent = day;
+
+				cell.addEventListener('click', () => {
+					showEventPopover(cell, dateStr, isWeekend);
+				});
+
+				container.appendChild(cell);
+			}
+		}
+
+		// === Рендер мобильного календаря ===
+		function renderMobileCalendar(month, year) {
+			const container = document.getElementById('mobileCalendar');
+			container.innerHTML = '';
+
+			const daysInMonth = new Date(year, month + 1, 0).getDate();
+			const firstDay = new Date(year, month, 1).getDay(); // 0 = вс
+			const dayNames = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+
+			let html = `
+        <table>
+          <thead>
+            <tr>${dayNames.map(name => `<th>${name}</th>`).join('')}</tr>
+          </thead>
+          <tbody>
+      `;
+
+			let row = '<tr>';
+
+			// Пустые ячейки до первого дня
+			for (let i = 0; i < (firstDay === 0 ? 6 : firstDay - 1); i++) {
+				row += '<td></td>';
+			}
+
+			for (let day = 1; day <= daysInMonth; day++) {
+				const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+				const dateObj = new Date(year, month, day);
+				const dayOfWeek = dateObj.getDay();
+				const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+				const hasEvent = !!events[dateStr];
+
+				const classes = [
+					hasEvent ? 'has-event' : '',
+					isWeekend ? 'weekend' : ''
+				].filter(Boolean).join(' ');
+
+				row += `<td class="${classes}" data-date="${dateStr}">${day}</td>`;
+
+				if ((day + (firstDay === 0 ? 6 : firstDay - 1)) % 7 === 0 || day === daysInMonth) {
+					html += row + '</tr>';
+					if (day < daysInMonth) row = '<tr>';
+				}
+			}
+
+			html += '</tbody></table>';
+			container.innerHTML = html;
+
+			// Обработчики кликов
+			container.querySelectorAll('td[data-date]').forEach(cell => {
+				const dateStr = cell.dataset.date;
+				const isWeekend = cell.classList.contains('weekend');
+				cell.addEventListener('click', () => {
+					showEventPopover(cell, dateStr, isWeekend);
+				});
+			});
+		}
+
+		// === Показ popover ===
+		function showEventPopover(targetCell, dateStr, isWeekend) {
+			const popover = document.getElementById('eventPopover');
+			const popoverWrapp = popover.querySelector('.popover__wrapp');
+			const event = events[dateStr];
+
+			if (!event) return;
+
+			// Позиционирование
+			const rect = targetCell.getBoundingClientRect();
+			popover.style.left = (rect.left + window.scrollX) + 'px';
+			popover.style.top = (rect.bottom + window.scrollY + 5) + 'px';
+
+			// Контент
+			popoverWrapp.innerHTML = `
+        <h4>${event.title}</h4>
+        <small>${event.date}</small>
+        <p>${event.description}</p>
+        <a href="${event.link}" target="_blank" class="btn-primary">Смотреть подробнее</a>
+      `;
+
+			// Стиль выходного дня
+			if (isWeekend) {
+				popover.classList.add('weekend');
+			} else {
+				popover.classList.remove('weekend');
+			}
+
+			popover.style.display = 'block';
+
+			// Кнопка закрытия
+			const btnClose = popover.querySelector('.btn-close');
+			if (btnClose) {
+				const closeHandler = () => {
+					popover.style.display = 'none';
+					popover.classList.remove('weekend');
+				};
+				btnClose.addEventListener('click', closeHandler, { once: true });
+			}
+
+			// Закрытие по клику вне
+			document.addEventListener('click', (e) => {
+				if (
+					!e.target.closest('.event-popover') &&
+					!e.target.closest('.has-event')
+				) {
+					popover.style.display = 'none';
+					popover.classList.remove('weekend');
+				}
+			}, { once: true });
+		}
+
+		// === Навигация ===
+		document.getElementById('prevMonth').addEventListener('click', () => {
+			currentMonth--;
+			if (currentMonth < 0) {
+				currentMonth = 11;
+				currentYear--;
+			}
+			updateCalendars();
+		});
+
+		document.getElementById('nextMonth').addEventListener('click', () => {
+			currentMonth++;
+			if (currentMonth > 11) {
+				currentMonth = 0;
+				currentYear++;
+			}
+			updateCalendars();
+		});
+
+		// === Обновление календарей ===
+		function updateCalendars() {
+			const monthName = new Intl.DateTimeFormat('ru-RU', { month: 'long' }).format(new Date(currentYear, currentMonth));
+			document.getElementById('currentMonth').textContent = `${monthName} ${currentYear}`;
+
+			renderDesktopCalendar(currentMonth, currentYear);
+			renderMobileCalendar(currentMonth, currentYear);
+		}
+
+		// === Инициализация ===
+		document.addEventListener('DOMContentLoaded', () => {
+			updateCalendars();
+		});
+	</script>
+</body>
+
+</html>

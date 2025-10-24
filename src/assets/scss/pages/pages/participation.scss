@@ -1,0 +1,33 @@
+.participation {
+	margin-top: rem(65);
+	padding-top: rem(40);
+	padding-bottom: rem(43);
+	background: var(--color-primary-opacity-6);
+
+	&-title {
+		text-transform: uppercase;
+		color: var(--color-primary);
+	}
+
+	&__list {
+		max-width: rem(1200);
+		width: 100%;
+		padding-top: rem(15);
+		display: flex;
+		flex-direction: column;
+		gap: rem(18);
+
+	}
+
+	h4 {
+		font-weight: 700;
+		font-size: rem(14);
+		line-height: rem(18);
+		color: var(--color-primary);
+	}
+
+	p {
+		line-height: rem(18);
+		color: var(--color-black);
+	}
+}
