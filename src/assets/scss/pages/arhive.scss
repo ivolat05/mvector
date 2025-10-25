@@ -2,7 +2,7 @@
 	padding-bottom: rem(80);
 
 	&__table {
-		padding-top: rem(36);
+		padding-top: rem(52);
 		overflow: auto;
 
 		&-wrapp {
@@ -45,6 +45,16 @@
 
 		&-link {
 			font-weight: 400;
+		}
+	}
+
+	&__fillter {
+		&-accordion-btn {
+			margin-top: rem(35);
+		}
+
+		&-mob {
+			margin-top: rem(25);
 		}
 	}
 }

@@ -23,6 +23,7 @@
 				<h1 class="events-title section-title">
 					Мероприятия (н1)
 				</h1>
+				@@include("../html/page/events/events__calendar.html" )
 				@@include("../html/page/events/events__fillter.html" )
 				@@include("../html/page/events/events__wrapp.html" )
 				<button type="button" class="events__more-btn btn">
@@ -32,10 +33,94 @@
 
 		</main>
 		@@include("../assets/components/footer/footer.html")
-		@@include("../assets/components/modal/modal-fillter.html")
 	</div>
+	<script src="assets/js/libs/air-datepicker.js"></script>
+	<script src="assets/js/app.min.js"></script>
 
-	<script src="../assets/js/app.min.js"></script>
+	<script>
+		// запуск календаря событий
+		events = {
+			"2025-09-15": {
+				city: "Ялта",
+				quantity: "I мероприятие",
+				date: "10-15 сентября 2025",
+				description:
+					"XII МЕЖДИСЦИПЛИНАРНЫЙ МЕДИЦИНСКИЙ КОНГРЕСС «Актуальные вопросы врачебной практики»",
+				link: "https://www.google.com/?hl=ru",
+			},
+			"2025-10-01": {
+				city: "Ялта",
+				quantity: "I мероприятие",
+				date: "01–10 октября 2025",
+				description:
+					"XII МЕЖДИСЦИПЛИНАРНЫЙ МЕДИЦИНСКИЙ КОНГРЕСС «Актуальные вопросы врачебной практики»",
+				link: "https://www.google.com/?hl=ru",
+			},
+			"2025-10-15": {
+				city: "Ялта",
+				quantity: "I мероприятие",
+				date: "15–10 октября 2025",
+				description:
+					"XII МЕЖДИСЦИПЛИНАРНЫЙ МЕДИЦИНСКИЙ КОНГРЕСС «Актуальные вопросы врачебной практики»",
+				link: "https://www.google.com/?hl=ru",
+			},
+			"2025-10-05": {
+				city: "Ялта",
+				quantity: "I мероприятие",
+				date: "05–10 октября 2025",
+				description:
+					"XII МЕЖДИСЦИПЛИНАРНЫЙ МЕДИЦИНСКИЙ КОНГРЕСС «Актуальные вопросы врачебной практики»",
+				link: "https://www.google.com/?hl=ru",
+			},
+			"2025-10-29": {
+				city: "Ялта",
+				quantity: "I мероприятие",
+				date: "29–29 октября 2025",
+				description:
+					"XII МЕЖДИСЦИПЛИНАРНЫЙ МЕДИЦИНСКИЙ КОНГРЕСС «Актуальные вопросы врачебной практики»",
+				link: "https://www.google.com/?hl=ru",
+			},
+			"2025-10-31": {
+				city: "Ялта",
+				quantity: "I мероприятие",
+				date: "31-31 октября 2025",
+				description:
+					"XII МЕЖДИСЦИПЛИНАРНЫЙ МЕДИЦИНСКИЙ КОНГРЕСС «Актуальные вопросы врачебной практики»",
+				link: "https://www.google.com/?hl=ru",
+			},
+			"2025-11-10": {
+				city: "Ялта",
+				quantity: "I мероприятие",
+				date: "10–29 ноября 2025",
+				description:
+					"XII МЕЖДИСЦИПЛИНАРНЫЙ МЕДИЦИНСКИЙ КОНГРЕСС «Актуальные вопросы врачебной практики»",
+				link: "https://www.google.com/?hl=ru",
+			},
+		};
+
+		document.addEventListener("DOMContentLoaded", () => {
+			// Устанавливаем текущий месяц при первой загрузке
+			const now = new Date();
+			currentMonth = now.getMonth();
+			currentYear = now.getFullYear();
+			updateCalendars();
+			isInitialized = true;
+		});
+		// === Пример асинхронной загрузки (можно вызывать извне) ===
+		// Например:
+		/*
+		fetch('/api/events')
+		  .then(res => res.json())
+		  .then(data => {
+			const eventMap = {};
+			data.forEach(e => {
+			  eventMap[e.date] = e;
+			});
+			updateEvents(eventMap); // ← эта функция обновит календарь
+		  });
+		*/
+	</script>
+
 </body>
 
 </html>

@@ -37,11 +37,33 @@ function dropdownOrientation(select) {
 	}
 }
 
+function rezetSelect(selectRezetBtn) {
+	const wrappContainerSelects = selectRezetBtn.closest(
+		"[data-select-container]"
+	);
+	const allSelect = wrappContainerSelects.querySelectorAll(
+		"[data-select-rezet]"
+	);
+	allSelect.forEach((select) => {
+		const inputHidden = select.querySelector(".select__hidden-input");
+		const selectCurrent = select.querySelector(".select__current");
+
+		if (selectCurrent) {
+			const placeholder = select.getAttribute("data-select-rezet");
+			selectCurrent.classList.remove("selected");
+			selectCurrent.innerText = placeholder.trim();
+		}
+		if (!inputHidden) return;
+		inputHidden.value = "";
+	});
+}
+
 // Основной обработчик событий
 document.addEventListener("click", function (event) {
 	const select = event.target.closest(".select");
 	const selectHeader = event.target.closest(".select__header");
 	const selectItem = event.target.closest(".select__item");
+	const selectRezetBtn = event.target.closest("[data-select-rezet-btn]");
 
 	if (select) {
 		if (selectHeader) {
@@ -57,6 +79,9 @@ document.addEventListener("click", function (event) {
 		}
 	} else {
 		selectsClose();
+	}
+	if (selectRezetBtn) {
+		rezetSelect(selectRezetBtn);
 	}
 });
 

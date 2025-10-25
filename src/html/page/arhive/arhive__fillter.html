@@ -1,3 +1,167 @@
-<div class="arhive__fillter">
+<section class="arhive__fillter events__fillter accordion">
+	<button type="button" class="arhive__fillter-accordion-btn events__accordion-btn accordion-btn">
+		<span class="button-arrow">
+			<img src="assets/img/icons/arrow-bottom.svg" alt="Стрелка">
+		</span>
+	</button>
+	<form id="modal-fillter" data-select-container class="modal-background events__popup">
+		<div class="events__popup-header modal__header flex ai-c jc-sb">
+			<h3 class="modal__header-title">
+				Фильтр
+			</h3>
+			<button type="button" class="modal-btn btn__modal--close">
+				<svg width="16" height="16" viewBox="0 0 16 16">
+					<use xlink:href="assets/img/sprite.svg#close"></use>
+				</svg>
+			</button>
+		</div>
+		<div class="events__popup-wrapp">
+			<input class="date-select" type="text" readonly placeholder="Дата">
 
+			<!--data-select-rezet помещаеться плесхолдер-->
+			<div class="select" data-select-rezet="Город">
+				<div class="select__header  ">
+					<input class="select__hidden-input" type="hidden" value="Все категории">
+					<!--если плесхолдер не нужен нужно добавить класс selected-->
+					<span class="select__current   ">
+						Город
+					</span>
+					<svg class="select-arrow" width="16" height="10" viewBox="0 0 16 10">
+						<use xlink:href="assets/img/sprite.svg#arrow-bottom"></use>
+					</svg>
+				</div>
+				<div class="select__body ">
+					<button type="button" class="select__item">
+						Архангельск
+					</button>
+					<button type="button" class="select__item">
+						Калининград
+					</button>
+					<button type="button" class="select__item">
+						Санкт-Петербург
+					</button>
+					<button type="button" class="select__item">
+						Рязань
+					</button>
+					<button type="button" class="select__item">
+						Пенза
+					</button>
+				</div>
+			</div>
+
+			<!--data-select-rezet помещаеться плесхолдер-->
+			<div class="select" data-select-rezet="Федеральный округ">
+				<div class="select__header  ">
+					<input class="select__hidden-input" type="hidden" value="Все категории">
+					<!--если плесхолдер не нужен нужно добавить класс selected-->
+					<span class="select__current   ">
+						Федеральный округ
+					</span>
+					<svg class="select-arrow" width="16" height="10" viewBox="0 0 16 10">
+						<use xlink:href="assets/img/sprite.svg#arrow-bottom"></use>
+					</svg>
+				</div>
+				<div class="select__body ">
+					<button type="button" class="select__item">
+						Центральный
+					</button>
+					<button type="button" class="select__item">
+						Северо-Западный
+					</button>
+					<button type="button" class="select__item">
+						Южный
+					</button>
+					<button type="button" class="select__item">
+						Северо-Кавказский
+					</button>
+					<button type="button" class="select__item">
+						Приволжский
+					</button>
+					<button type="button" class="select__item">
+						Уральский
+					</button>
+					<button type="button" class="select__item">
+						Сибирский
+					</button>
+					<button type="button" class="select__item">
+						Дальневосточный
+					</button>
+
+				</div>
+			</div>
+
+			<!--data-select-rezet помещаеться плесхолдер-->
+			<div class="select" data-select-rezet="Целевая аудитория">
+				<div class="select__header  ">
+					<input class="select__hidden-input" type="hidden" value="Все категории">
+					<!--если плесхолдер не нужен нужно добавить класс selected-->
+					<span class="select__current   ">
+						Целевая аудитория
+					</span>
+					<svg class="select-arrow" width="16" height="10" viewBox="0 0 16 10">
+						<use xlink:href="assets/img/sprite.svg#arrow-bottom"></use>
+					</svg>
+				</div>
+				<div class="select__body ">
+					<button type="button" class="select__item">
+						Целевая аудитория 1
+					</button>
+					<button type="button" class="select__item">
+						Целевая аудитория 2
+					</button>
+					<button type="button" class="select__item">
+						Целевая аудитория 3
+					</button>
+				</div>
+			</div>
+
+			<!--data-select-rezet помещаеться плесхолдер-->
+			<div class="select" data-select-rezet="Формат">
+				<div class="select__header  ">
+					<input class="select__hidden-input" type="hidden" value="Все категории">
+					<!--если плесхолдер не нужен нужно добавить класс selected-->
+					<span class="select__current   ">
+						Формат
+					</span>
+					<svg class="select-arrow" width="16" height="10" viewBox="0 0 16 10">
+						<use xlink:href="assets/img/sprite.svg#arrow-bottom"></use>
+					</svg>
+				</div>
+				<div class="select__body ">
+					<button type="button" class="select__item">
+						Формат 1
+					</button>
+					<button type="button" class="select__item">
+						Формат 2
+					</button>
+					<button type="button" class="select__item">
+						Формат 3
+					</button>
+					<button type="button" class="select__item">
+						Формат 4
+					</button>
+				</div>
+			</div>
+			<button type="submit" class="btn events__popup-btn">
+				Подобрать
+			</button>
+		</div>
+
+		<div class="events__popup-footer modal__footer">
+			<button data-select-rezet-btn data-reset-date-select type="button" class="modal__footer-btn btn-br  ">
+				Сбросить
+			</button>
+			<button class="modal__footer-btn btn btn__modal--close">
+				Применить
+			</button>
+		</div>
+	</form>
+</section>
+<div class="arhive__fillter-mob events__fillter-mob">
+	<button data-open-modal="modal-fillter" type="button" class="events__fillter-mob-btn btn">
+		Фильтр
+	</button>
+	<button type="button" class="events__fillter-mob-btn btn">
+		Очистить
+	</button>
 </div>

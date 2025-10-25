@@ -1,0 +1,196 @@
+.air-datepicker {
+	width: rem(285);
+	box-shadow: var(--shadow-dark-3);
+	background: var(--color-white);
+	border: rem(1) solid var(--color-border);
+
+	&.-inline- {
+		box-shadow: var(--shadow-dark-3);
+		background: var(--color-white);
+		border: rem(1) solid var(--color-border);
+	}
+}
+
+.air-datepicker--navigation {
+	width: 100%;
+	background: var(--color-primary);
+	align-items: center;
+}
+
+.air-datepicker-nav--title {
+
+
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 700;
+	font-size: rem(16);
+	line-height: rem(20);
+	text-align: center;
+
+	color: var(--color-white);
+
+	@include interactive-states(background, none, none, none);
+}
+
+.air-datepicker--content {
+	border: none;
+}
+
+.air-datepicker-nav {
+	align-items: center;
+	padding-left: rem(10);
+	padding-right: rem(10);
+	border: none
+}
+
+.air-datepicker-nav--action {
+	@include imgBox(rem(22), rem(22));
+	fill: #ffff;
+	stroke: none;
+	@include interactive-states(background, none, none, none);
+	opacity: 1;
+
+	svg {
+		width: rem(22);
+		height: rem(22);
+	}
+
+	path {
+		fill: #ffff;
+		stroke: none;
+		stroke-width: initial;
+	}
+}
+
+.air-datepicker-body--day-name {
+
+
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: rem(14);
+	line-height: rem(17);
+	text-align: center;
+	text-transform: capitalize;
+	color: var(--color-black);
+
+	&.-weekend- {
+		color: var(--color-error);
+	}
+}
+
+
+.air-datepicker-body--day-names,
+.air-datepicker-body--cells {
+	display: grid;
+	grid-template-columns: repeat(7, rem(22));
+	justify-content: space-between;
+	align-items: center;
+	gap: rem(8);
+
+}
+
+.air-datepicker-body--day-names {
+	height: rem(37);
+	padding: rem(2) rem(9);
+	background: var(--color-primary-opacity-15);
+	margin: 0;
+}
+
+.air-datepicker-body--cells {
+	padding: rem(6) rem(9);
+}
+
+
+
+.air-datepicker--content {
+	max-width: rem(255);
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+
+	margin-top: rem(15);
+}
+
+.air-datepicker-cell {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: rem(22);
+	height: rem(22);
+	border-radius: 50%;
+
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: rem(16);
+	line-height: 100%;
+	text-align: center;
+
+	color: var(--color-black);
+
+	cursor: pointer;
+	border-radius: 50% !important;
+	@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+	@include interactive-states(color, var(--color-white), var(--color-black), var(--color-black));
+
+
+
+	&.-weekend- {
+		color: var(--color-error);
+		@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+		@include interactive-states(color, var(--color-white), var(--color-black), var(--color-black));
+
+	}
+
+	&.-weekend-.-in-range-,
+	&.-in-range- {
+		color: var(--color-black);
+		background: var(--color-accent);
+		@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+		@include interactive-states(color, var(--color-white), var(--color-black), var(--color-black));
+	}
+
+	&.-selected- {
+		color: var(--color-white);
+		background: var(--color-primary);
+		@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+		@include interactive-states(color, var(--color-white), var(--color-black), var(--color-black));
+
+	}
+
+	&.-current- {}
+}
+
+
+.air-datepicker-body--cells.-days- {
+	grid-template-columns: repeat(7, rem(22));
+	grid-auto-rows: rem(22);
+}
+
+.date-select {
+	cursor: pointer;
+	width: 100%;
+	height: rem(35);
+	padding: rem(7) rem(12);
+	border: rem(1) solid var(--color-border);
+	outline: none;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: rem(14);
+	line-height: rem(17);
+	color: var(--color-black);
+	background: url('../../assets/img/icons/arrov-select.svg') no-repeat center right rem(15)/contain, var(--color-white);
+	background-size: rem(16) rem(10);
+
+	&::placeholder {
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: rem(14);
+		line-height: rem(17);
+		color: var(--color-border);
+	}
+}

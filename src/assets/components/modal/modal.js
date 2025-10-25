@@ -30,12 +30,7 @@ document.addEventListener("click", (event) => {
 		modalOpen(modal);
 	}
 
-	if (
-		event.target.closest(".btn__modal--close") ||
-		(!event.target.closest(".modal__container") &&
-			event.target.closest(".modal-background") &&
-			!event.target.closest(".modal__blocked-close"))
-	) {
+	if (event.target.closest(".btn__modal--close")) {
 		event.preventDefault();
 		closeAllModals();
 	}

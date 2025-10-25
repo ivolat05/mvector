@@ -35,3 +35,9 @@ export const js = () => {
 			.pipe(app.plugins.browsersync.stream())
 	);
 };
+
+export const libs = () => {
+	return app.gulp
+		.src(app.path.src.libs)
+		.pipe(app.gulp.dest(app.path.build.libs));
+};

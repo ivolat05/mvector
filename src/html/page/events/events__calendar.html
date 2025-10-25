@@ -1,0 +1,51 @@
+<div class=" events__calendar">
+
+	<div class="events__calendar-box calendar-wrapper">
+		<div class="events__calendar-controls">
+			<button id="events__prev-month" class="events__calendar-btn">
+				<svg width="22" height="15" viewBox="0 0 22 15">
+					<use xlink:href="assets/img/sprite.svg#arrow-left"></use>
+				</svg>
+			</button>
+			<span id="calendar__current-month" class="events__calendar-month">Сентябрь 2025</span>
+			<button id="events__next-month" class="events__calendar-btn">
+				<svg width="22" height="15" viewBox="0 0 22 15">
+					<use xlink:href="assets/img/sprite.svg#arrow-right"></use>
+				</svg>
+			</button>
+		</div>
+		<div class="events__calendar-container">
+			<div id="week-days-header" class="events__calendar-header"></div>
+			<div id="desktop-calendar" class="events__calendar-horizontal"></div>
+			<div id="mobile-calendar" class="events__calendar-mobile"></div>
+		</div>
+	</div>
+
+	<div id="events__modal" class="events__modal">
+		<div class="events__modal-header flex ai-c jc-sb">
+			<div class="events__modal-name">
+				<span class="events__modal-city">
+					Ялта
+				</span>
+				(<span class="events__modal-quantity">
+					1 мероприятие
+				</span>)
+			</div>
+			<button id="events__modal-close" type="button" class="events__modal-close ">
+				<svg width="16" height="16" viewBox="0 0 16 16">
+					<use xlink:href="assets/img/sprite.svg#close"></use>
+				</svg>
+			</button>
+		</div>
+		<div class="events__modal-date">
+			03–05 сентября 2025
+		</div>
+		<div class="events__modal-description">
+			ХII МЕЖДИСЦИПЛИНАРНЫЙ МЕДИЦИНСКИЙ КОНГРЕСС «Актуальные вопросы врачебной практики»
+		</div>
+		<a href="#" target="_blank" class="btn events__modal-btn">
+			Смотреть подробнее
+		</a>
+		<div id="events__modal-arrow" class="events__modal-arrow"></div>
+	</div>
+</div>

@@ -54,6 +54,9 @@
 				<svg width="20" height="20" viewBox="0 0 20 20">
 					<use xlink:href="assets/img/sprite.svg#cross"></use>
 				</svg>
+				<svg width="16" height="10" viewBox="0 0 16 10" style="stroke: red;">
+					<use xlink:href="assets/img/sprite.svg#arrow-bottom"></use>
+				</svg>
 			</div>
 		</li>
 		<li>
@@ -146,11 +149,63 @@
 		</li>
 		<li>
 			<h2 style="text-align: center; padding-bottom: 15px;">
-				Компонент 2
+				select
 			</h2>
+			<div class="select" data-select-rezet="">
+				<div class="select__header  ">
+					<input class="select__hidden-input" type="hidden" value="Все категории">
+					<!--если плесхолдер не нужен нужно добавить класс selected-->
+					<span class="select__current   ">
+						Все категории
+					</span>
+					<svg class="select-arrow" width="16" height="10" viewBox="0 0 16 10">
+						<use xlink:href="assets/img/sprite.svg#arrow-bottom"></use>
+					</svg>
+				</div>
+				<div class="select__body ">
+					<button type="button" class="select__item">
+						Последние
+					</button>
+				</div>
+			</div>
+			<h2 style="text-align: center; padding-bottom: 15px;">
+				сброс select
+			</h2>
+			<div class="" data-select-container style="margin-top: 15px;">
+				<div class="select" data-select-rezet="Все категории">
+					<div class="select__header  ">
+						<input class="select__hidden-input" type="hidden" value="Все категории">
+						<!--если плесхолдер не нужен нужно добавить класс selected-->
+						<span class="select__current   ">
+							Все категории
+						</span>
+						<svg class="select-arrow" width="16" height="10" viewBox="0 0 16 10">
+							<use xlink:href="assets/img/sprite.svg#arrow-bottom"></use>
+						</svg>
+					</div>
+					<div class="select__body ">
+						<button type="button" class="select__item">
+							Последние
+						</button>
+					</div>
+				</div>
 
+				<button data-select-rezet-btn type="button" class="btn">
+					сброс select
+				</button>
+			</div>
+		</li>
+
+		<li>
+			<h2 style="text-align: center; padding-bottom: 15px;">
+				date select
+			</h2>
+			<input class="date-select" type="text" readonly placeholder="Дата">
+			<button class="btn" data-reset-date-select>Сбросить</button>
 		</li>
 	</ul>
 </body>
+<script src="assets/js/libs/air-datepicker.js"></script>
+<script src="assets/js/app.min.js"></script>
 
 </html>

@@ -9,6 +9,7 @@ const srcFolder = "./src"; // путь к папке с исходниками
 export const path = {
 	build: {
 		images: `${buildFolder}/assets/img/`,
+		libs: `${buildFolder}/assets/js/libs/`,
 		js: `${buildFolder}/assets/js/`,
 		css: `${buildFolder}/assets/css/`,
 		html: `${buildFolder}/`,
@@ -18,6 +19,7 @@ export const path = {
 	},
 	src: {
 		js: `${srcFolder}/assets/js/app.js`,
+		libs: `${srcFolder}/assets/js/libs/**/*.*`,
 		images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp,xml,webmanifest}`,
 		svg: `${srcFolder}/assets/img/**/*.svg"`,
 		scss: `${srcFolder}/assets/scss/style.scss`,
@@ -30,6 +32,7 @@ export const path = {
 			srcFolder + "/assets/js/**/*.js",
 			srcFolder + "/assets/components/**/*.js",
 		],
+		libs: `${srcFolder}/assets/js/libs/**/*.*`,
 		images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp,xml,webmanifest}`,
 		scss: [
 			srcFolder + "/assets/scss/**/*.scss",

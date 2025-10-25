@@ -1,0 +1,307 @@
+.events__calendar {
+	padding-top: rem(34);
+
+	@include mw992 {
+		padding-top: rem(28);
+		max-width: rem(285);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&-box {
+		display: grid;
+		grid-template-columns: rem(214) 1fr;
+		gap: rem(26);
+
+		@include mw1240 {
+			display: block;
+		}
+	}
+
+	&-btn {
+		fill: var(--color-white);
+		@include imgBox(rem(22), rem(22));
+		cursor: pointer;
+		@include interactive-states(fill, var(--color-dark), var(--color-accent), var(--color-accent));
+	}
+
+	&-controls {
+		background: var(--color-primary);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		height: rem(40);
+		padding-left: rem(10);
+		padding-right: rem(10);
+
+		@include mw1240 {
+			max-width: rem(285);
+		}
+	}
+
+	&-month {
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 20px;
+		text-align: center;
+		text-transform: capitalize;
+		color: var(--color-white);
+	}
+
+	&-header {
+		display: flex;
+		align-items: center;
+		gap: rem(10);
+
+		@include mw1240 {
+			margin-top: rem(15);
+		}
+
+		@include mw992 {
+			display: none;
+		}
+
+		span {
+			display: block;
+			width: rem(22);
+			flex-shrink: 0;
+
+			font-family: 'Montserrat';
+			font-style: normal;
+			font-weight: 400;
+			font-size: rem(10);
+			line-height: rem(12);
+			text-align: center;
+
+			color: var(--color-black);
+
+			&.weekend {
+				color: var(--color-error);
+			}
+		}
+	}
+
+	&-horizontal {
+		padding-top: rem(10);
+		display: flex;
+		align-items: center;
+		gap: rem(10);
+
+		@include mw992 {
+			display: none;
+		}
+	}
+
+	.day-cell {
+		width: rem(22);
+		height: rem(22);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		border-radius: 50%;
+
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: rem(14);
+		line-height: rem(17);
+
+		color: var(--color-black);
+		cursor: pointer;
+
+		@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+		@include interactive-states(color, var(--color-white), var(--color-black), var(--color-black));
+
+		&.weekend {
+			color: var(--color-error);
+			@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+			@include interactive-states(color, var(--color-white), var(--color-black), var(--color-black));
+
+		}
+
+		&.has-event {
+			background: var(--color-accent);
+			@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+			@include interactive-states(color, var(--color-white), var(--color-black), var(--color-black));
+
+		}
+
+		&.is-active {
+			background: var(--color-primary);
+			color: var(--color-white);
+			@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+			@include interactive-states(color, var(--color-white), var(--color-black), var(--color-black));
+
+		}
+	}
+
+	&-mobile {
+		display: none;
+		width: 100%;
+		max-width: rem(255);
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: rem(15);
+
+		@include mw992 {
+			display: block;
+		}
+
+		.mobile-days-grid,
+		.mobile-weekdays-header {
+			display: grid;
+			grid-template-columns: repeat(7, rem(22));
+			justify-content: space-between;
+			align-items: center;
+			gap: rem(8);
+		}
+
+		.mobile-days-grid {
+			padding: rem(6) rem(9);
+		}
+
+		.mobile-weekdays-header {
+			height: rem(37);
+			padding: rem(2) rem(9);
+			background: var(--color-primary-opacity-15);
+		}
+
+		.mobile-weekday {
+
+			font-family: 'Montserrat';
+			font-style: normal;
+			font-weight: 400;
+			font-size: rem(14);
+			line-height: rem(17);
+			text-align: center;
+			color: var(--color-black);
+
+			&.weekend {
+				color: var(--color-error);
+			}
+
+		}
+
+		.mobile-day {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: rem(22);
+			height: rem(22);
+			border-radius: 50%;
+
+			font-family: 'Montserrat';
+			font-style: normal;
+			font-weight: 400;
+			font-size: rem(16);
+			line-height: 100%;
+			text-align: center;
+
+			color: var(--color-black);
+
+			cursor: pointer;
+
+			@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+			@include interactive-states(color, var(--color-white), var(--color-black), var(--color-black));
+
+			&.weekend {
+				color: var(--color-error);
+				@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+				@include interactive-states(color, var(--color-white), var(--color-black), var(--color-black));
+
+			}
+
+			&.has-event {
+				background: var(--color-accent);
+				@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+				@include interactive-states(color, var(--color-white), var(--color-black), var(--color-black));
+
+			}
+
+			&.is-active {
+				background: var(--color-primary);
+				color: var(--color-white);
+				@include interactive-states(background, var(--color-dark), var(--color-accent), var(--color-accent));
+				@include interactive-states(color, var(--color-white), var(--color-black), var(--color-black));
+
+			}
+		}
+	}
+}
+
+.events__modal {
+	position: absolute;
+	display: none;
+	width: rem(277);
+	z-index: var(--z-index-3);
+	border: rem(1) solid var(--color-primary);
+	padding: rem(11) rem(16);
+	box-shadow: var(--shadow-dark-55);
+	background: var(--color-white);
+
+	&-arrow {
+		position: absolute;
+		width: rem(1);
+		height: rem(16);
+		z-index: -1;
+		top: 0;
+		transform: translate(-50%, -100%);
+		background: var(--color-primary);
+
+	}
+
+	&-close {
+		@include imgBox(rem(16), rem(16));
+		stroke: var(--color-border);
+		@include interactive-states(stroke, var(--color-dark), var(--color-accent), var(--color-accent));
+	}
+
+	&-btn {
+		margin-top: rem(20);
+		width: 100%;
+		font-size: rem(16);
+	}
+
+	&-name {
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: rem(12);
+		line-height: 110%;
+		color: var(--color-primary);
+	}
+
+	&-city {
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 700;
+		font-size: rem(14);
+		line-height: rem(17);
+		color: var(--color-primary);
+	}
+
+	&-date {
+		padding-top: rem(6);
+		padding-top: rem(8);
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: rem(12);
+		line-height: rem(15);
+		color: var(--color-black);
+	}
+
+	&-description {
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: rem(12);
+		line-height: rem(15);
+		color: var(--color-black);
+		padding-top: rem(7);
+	}
+}

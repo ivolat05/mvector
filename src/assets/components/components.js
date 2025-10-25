@@ -4,3 +4,4 @@
 --include("../components/select/select.js");
 --include("../components/accordion/accordion.js");
 --include("../components/checkbox/rezet-checkbox.js");
+--include("../components/date-select/date-select.js");

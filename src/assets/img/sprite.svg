@@ -32,7 +32,9 @@
 	</symbol>
 	<symbol id="cross" viewBox="0 0 20 20">
 		<path d="M10.0002 18.5001L10.0002 1.50006M1.5 10.0002L18.5 10.0002"   stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+	</symbol> 
+	<symbol id="arrow-bottom"  viewBox="0 0 16 10" >
+		<path d="M0.999283 0.999985L7.7168 7.7175L14.4343 0.999985"   stroke-width="2" stroke-linecap="round"/>
 	</symbol>
-
 
 </svg>

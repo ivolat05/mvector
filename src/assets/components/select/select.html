@@ -6,9 +6,8 @@
 		<span class="select__current ">
 			Все категории
 		</span>
-		<svg class="select-arrow" width="16" height="10" viewBox="0 0 16 10" fill="none"
-			xmlns="http://www.w3.org/2000/svg">
-			<path d="M0.999283 1L7.7168 7.71751L14.4343 1" stroke="#C0C0C0" stroke-width="2" stroke-linecap="round" />
+		<svg class="select-arrow" width="16" height="10" viewBox="0 0 16 10">
+			<use xlink:href="assets/img/sprite.svg#arrow-bottom"></use>
 		</svg>
 	</div>
 	<div class="select__body ">
@@ -16,4 +15,28 @@
 			Последние
 		</button>
 	</div>
+</div>
+
+<div class="" data-select-container style="margin-top: 15px;">
+	<div class="select" data-select-rezet="Все категории">
+		<div class="select__header  ">
+			<input class="select__hidden-input" type="hidden" value="Все категории">
+			<!--если плесхолдер не нужен нужно добавить класс selected-->
+			<span class="select__current   ">
+				Все категории
+			</span>
+			<svg class="select-arrow" width="16" height="10" viewBox="0 0 16 10">
+				<use xlink:href="assets/img/sprite.svg#arrow-bottom"></use>
+			</svg>
+		</div>
+		<div class="select__body ">
+			<button type="button" class="select__item">
+				Последние
+			</button>
+		</div>
+	</div>
+
+	<button data-select-rezet-btn type="button" class="btn">
+		сброс select
+	</button>
 </div>
